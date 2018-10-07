@@ -1,0 +1,11 @@
+txtNomchamp.isEmpty() not correct, the correct is txtNomchamp.trim().isEmpty() 
+
+changer le type en date et appliquer patter pour affichage des date dans les reports 
+
+  cmbSecteur.getModel().setSelectedItem("") pour faire null la valeur de text selectionnée dans cmb
+
+//checker si valeur selctionnée avant de recuperer
+ if(cmbSecteur.getSelectedIndex()!=-1){
+        codesecteur.setText("");
+        codesecteur.setText(tab.get(cmbSecteur.getSelectedIndex()).toString());
+        }

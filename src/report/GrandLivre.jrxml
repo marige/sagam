@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="48e367e1-8825-48c8-a6b1-98efbb72ee01">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="libarticle" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="direction" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="service" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="pays" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="libinstitution" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT idoperation,dateoperation,livrejournal.idarticle,article.libarticle,idbonEntree, qteEntree, natureuniteEntree, idbonsortie, qteSortie, natureuniteSortie, pusortie, observation, puentree, pustock,livrejournal.qtestock,  
+        CASE 
+    WHEN idbonEntree IS NULL 
+    THEN (SELECT libbur FROM bureau, sortie where idbonsortie=sortie.idsortie and     bureau.idbureau=sortie.idbureau )
+else (SELECT RAISONSOCIAL FROM fournisseur,bon where idbonentree=bon.idbon and bon.idfournisseur=fournisseur.idfournisseur )
+End as source
+FROM livrejournal,article where livrejournal.idarticle=article.idarticle]]>
+	</queryString>
+	<field name="idoperation" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dateoperation" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idarticle" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="libarticle" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idbonEntree" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="qteEntree" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="natureuniteEntree" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idbonsortie" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="qteSortie" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="natureuniteSortie" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pusortie" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="observation" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="puentree" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pustock" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="qtestock" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="source" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="235" splitType="Stretch">
+			<textField>
+				<reportElement x="425" y="102" width="353" height="36" forecolor="#000000" uuid="96e642b5-129b-4cd0-bb9d-d2f67dd1d0cb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="18" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libarticle}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="313" y="51" width="112" height="34" uuid="498e0641-eae6-4f29-94ef-66f1bb0be508"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[NATURE DE L'UNITE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="15" width="295" height="36" uuid="1efc2ef4-bef5-4bc0-a2b7-3735dc5f16aa"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Double"/>
+					<leftPen lineWidth="0.0" lineStyle="Double"/>
+					<bottomPen lineWidth="0.0" lineStyle="Double"/>
+					<rightPen lineWidth="0.0" lineStyle="Double"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="20" isBold="false"/>
+				</textElement>
+				<text><![CDATA[GRAND LIVRE DES COMPTES]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="15" width="278" height="143" isPrintWhenDetailOverflows="true" uuid="dd4b4129-aab8-4b5b-87c7-3b334d75a485"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pays}
++
+"\n********************\n"
++
+$P{direction}
++
+"\n********************\n"
++
+$P{service}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="313" y="85" width="112" height="17" uuid="3f8e0ded-b79f-4aae-aa00-2af597c1a577"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[COMPTE N °:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="102" width="112" height="36" uuid="54dc9392-fdc4-4cfa-aa77-6c422586785d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[INTITULE:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="62" splitType="Stretch">
+			<staticText>
+				<reportElement x="51" y="3" width="120" height="59" uuid="38fe9bd3-a99e-4d9b-87b0-5a2e83ac3953"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Bright" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N ° ORDRE D'ENTREE OU ORDRE DE SORTIE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="3" width="51" height="59" uuid="a3c3e6d5-46c2-43c6-891f-332e70f894f2"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Bright" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="171" y="3" width="142" height="59" uuid="5014f403-a252-46d2-abf7-01c0d88c7701"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Bright" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORIGINES DES ENTREES OU DESTINATIONS DES SORTIES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="313" y="3" width="61" height="59" uuid="64dc4aec-0ebe-425f-9563-5ae27f46ebba"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Bright" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ENTREE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="3" width="68" height="59" uuid="1204bb43-bb94-428a-923e-05c8c2448de6"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Bright" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SORTIES DEFINITIVES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="442" y="3" width="77" height="59" uuid="84657e57-98ae-412f-989d-819b5b698d1e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Bright" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRIX UNITAIRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="519" y="3" width="65" height="59" uuid="075958b3-e529-49ea-ba9f-9b2831cbf0c3"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Bright" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EXISTANT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="585" y="3" width="77" height="59" uuid="1995131a-9651-4037-b5c8-8c12c1d77a4e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Bright" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MONTANT D'EXISTANT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="662" y="3" width="64" height="59" uuid="e763faf5-eb24-41c6-b96a-8d8823742000"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Bright" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[POUR MEMOIRE SORTIE PROVISOIRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="726" y="3" width="76" height="59" uuid="6918a982-291a-4cb0-9f63-171d0c88ea9a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Lucida Bright" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE RETOUR DES MATIERES SORTIES PROVISOIREMENT]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="62" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="51" y="0" width="120" height="34" uuid="b7cadc48-4e08-43fb-8aa2-9511476cd9ea"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["("+ $F{COLUMN_18} +")"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="171" y="0" width="142" height="33" uuid="3230dda9-651e-49f5-9bf5-fbeef6fb7521"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{COLUMN_5}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="171" y="1" width="142" height="33" uuid="85a35de7-55c0-4178-9559-4221c2485e66"/>
+				<box>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_10}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="313" y="1" width="61" height="33" uuid="2c44f8e6-a580-4737-9c0c-85c492e27959"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_6}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="442" y="0" width="77" height="34" uuid="da42d348-078c-4a39-bc05-3d50e709c8ae"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{COLUMN_7}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="374" y="1" width="68" height="33" uuid="17145980-842d-478d-8b44-3505dbf54df8"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_11}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="519" y="1" width="65" height="34" uuid="1a55ccd1-5335-4f00-9e31-83c3b049df7d"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{COLUMN_15}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="585" y="2" width="80" height="33" uuid="7367d2d9-6297-4d23-9d88-0280182396e6"/>
+				<box>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{COLUMN_17}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="2" width="51" height="31" uuid="b87deebb-cf5d-4132-ac5f-78fc69291120"/>
+				<textFieldExpression><![CDATA[$F{COLUMN_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="411" y="38" width="171" height="16" uuid="a14ac0ee-1c1c-4555-981a-a46d9c3a8e69"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="22" width="113" height="16" uuid="1b2c12c6-bce2-4398-85fe-9af127e147ed"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[SYGCOMAT @2017]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="349" y="38" width="49" height="16" uuid="94960e67-1260-4ba2-a533-f7c4df9e30b3"/>
+				<textElement>
+					<font fontName="Times New Roman" size="10" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Edité le]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="629" y="22" width="80" height="16" uuid="853088a4-bf62-4397-a865-d30298b0c4d5"/>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="738" y="22" width="40" height="16" uuid="b0db8f41-e131-4b87-8b13-4dfaeedb3ad3"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
