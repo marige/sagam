@@ -1,8 +1,11 @@
 
+import bdd.ModelDb;
 import bdd.Parametre_Connect;
+import comptamatiere.ARTICLE;
 import comptamatiere.COMPTEUTILISATEUR;
 import control.Controle;
 import formulaire.Compteutilisateur.NouveauCompteUtil;
+import formulaire.article.StockSecu;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.sql.PreparedStatement;
@@ -22,9 +25,8 @@ import javax.swing.JOptionPane;
  */
 public class Authentification extends javax.swing.JFrame {
     // Controle s=null
-
+    //ARTICLE a = new ARTICLE();
     COMPTEUTILISATEUR c;
-
     public Authentification() {
         try {
 
@@ -55,6 +57,10 @@ public class Authentification extends javax.swing.JFrame {
                 rs.close();
                 //definition de la variable session
                 Controle.utilisateur=cmbUser.getSelectedItem().toString();
+                if(new ARTICLE().isAtteintStockSecurite()){
+                    StockSecu s = new StockSecu(this, true);
+                    s.setVisible(true);
+                }
                 new P().setVisible(true);
                //new Fp().setVisible(true);
             } else {

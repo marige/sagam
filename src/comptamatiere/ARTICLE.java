@@ -26,7 +26,11 @@ public class ARTICLE extends CATEGORIE{
    public int getStockArticle(int codeArticle) throws SQLException{
       return Integer.parseInt(this.getOneResult("select stockactu from article where idarticle="+codeArticle));
    } 
- 
+     
+   public boolean isAtteintStockSecurite() throws SQLException{
+      return Integer.parseInt(this.getOneResult("select count(*) from article where stocksecurite>=stockactu and stocksecurite>0"))>0?true:false;
+   } 
+  
    
    public HashMap getArticleInfo(int idarticle) throws SQLException{
         HashMap hm=new HashMap();
