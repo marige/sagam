@@ -113,6 +113,8 @@ public class Nouveau extends javax.swing.JDialog {
         codeD.setEditable(false);
         codeD.setForeground(new java.awt.Color(255, 0, 0));
 
+        txtStockSecurite.setText("0");
+
         jLabel4.setFont(new java.awt.Font("Tempus Sans ITC", 1, 12)); // NOI18N
         jLabel4.setText("Article");
 
@@ -315,13 +317,12 @@ public class Nouveau extends javax.swing.JDialog {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(txtPu, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel14))))
-                        .addGap(0, 9, Short.MAX_VALUE))
+                        .addGap(0, 27, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtStockInit, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9))))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -421,6 +422,9 @@ public class Nouveau extends javax.swing.JDialog {
         if(txtArticle.getText().isEmpty()){
             JOptionPane.showMessageDialog(this,"saisissez le libellé d\'article,SVP");
         }
+        else if(!a.isInteger(txtStockSecurite.getText())){
+              JOptionPane.showMessageDialog(this,"Valeur incorrecte de stock de sécurité");
+        }
         else if(codeD.getText().isEmpty())
             JOptionPane.showMessageDialog(this,"Choisissez la catégorie de l\'article,SVP");
         else if(txtDateStockInit.getDate()==null)
@@ -433,8 +437,8 @@ public class Nouveau extends javax.swing.JDialog {
         int reponse= JOptionPane.showConfirmDialog(this,"voulez-vous enregistrez?","confirmation",JOptionPane.YES_NO_OPTION);
         if(reponse==JOptionPane.YES_OPTION){
             try {
-                String valeur[]={codeC.getText(),txtArticle.getText(),txtSpecification.getText(),txtStockInit.getText(),txtStockInit.getText(),a.getDateChoisie(txtDateStockInit),txtStockSecurite.getText(),txtUniteMesure.getText(),txtFolio.getText(),txtStockInit.getText()};
-                int i=a.Insertion("ARTICLE(IDCATEGORIE, LIBARTICLE, SPECIFICATION, STOCKINIT,STOCKACTU, DATESTOCKINI, PRIXUNITAIRE, UNITEMESURE,folio,Qte_Res_StockInit)",valeur);
+                String valeur[]={codeC.getText(),txtArticle.getText(),txtSpecification.getText(),txtStockInit.getText(),txtStockInit.getText(),a.getDateChoisie(txtDateStockInit),txtPu.getText(),txtUniteMesure.getText(),txtFolio.getText(),txtStockInit.getText(),txtStockSecurite.getText()};
+                int i=a.Insertion("ARTICLE(IDCATEGORIE, LIBARTICLE, SPECIFICATION, STOCKINIT,STOCKACTU, DATESTOCKINI, PRIXUNITAIRE, UNITEMESURE,folio,Qte_Res_StockInit,stocksecurite)",valeur);
                
                 //ecriture dans le livrejournal
               /*   String idartcle=a.getOneResult("select max(idarticle) from article");

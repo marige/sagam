@@ -63,7 +63,7 @@
                                   <Component id="codebureau" min="-2" pref="112" max="-2" attributes="0"/>
                                   <Group type="102" attributes="0">
                                       <Component id="libureau" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>

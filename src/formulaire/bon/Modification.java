@@ -6,7 +6,6 @@ package formulaire.bon;
 
 import comptamatiere.BON;
 import comptamatiere.DETAILBON;
-import formulaire.article.NouveauPourBon;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -1324,7 +1323,7 @@ public class Modification extends javax.swing.JDialog {
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
 
-        NouveauPourBon n = new NouveauPourBon(new JFrame(),true);
+        formulaire.article.Nouveau n = new formulaire.article.Nouveau(new JFrame(),true);
         n.setVisible(true);
     }//GEN-LAST:event_jButton12ActionPerformed
 

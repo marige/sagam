@@ -15,10 +15,12 @@ public class ARTICLE extends CATEGORIE{
    public String SPECIFICATION;
    public int STOCKINIT;
    public int STOCKACTU;
+   public int STOCKSECURITE;
    public String DATESTOCKINI;
    public int PRIXUNITAIRE;
    public String UNITEMESURE;
     public String numcompte;
+    
    JTable tableArticle;
    
    public int getStockArticle(int codeArticle) throws SQLException{

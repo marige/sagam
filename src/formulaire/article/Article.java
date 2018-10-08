@@ -22,7 +22,7 @@ public class Article extends javax.swing.JDialog{
      * Creates new form Article
      */
     ARTICLE a= new ARTICLE();
-    String reqpart="select categorie.IDCATEGORIE as IdCat,idARTICLE as Code, LIBARTICLE as Article, SPECIFICATION, STOCKACTU as Stock, DATESTOCKINI, PRIXUNITAIRE as Pu, UNITEMESURE as Unite,numerocompte as NCpte, libcategorie as Categorie,STOCKINIT from article, Categorie where categorie.idcategorie=article.idcategorie";
+    String reqpart="select categorie.IDCATEGORIE as IdCat,idARTICLE as Code, LIBARTICLE as Article, SPECIFICATION, STOCKACTU as Stock, DATESTOCKINI, PRIXUNITAIRE as Pu, UNITEMESURE as Unite,numerocompte as NCpte, libcategorie as Categorie,STOCKINIT,stocksecurite from article, Categorie where categorie.idcategorie=article.idcategorie";
     public Article(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -447,6 +447,7 @@ public class Article extends javax.swing.JDialog{
             a.PRIXUNITAIRE=Integer.parseInt(table.getValueAt(table.getSelectedRow(),a.getColumnByName(table,"Pu")).toString());           
             a.UNITEMESURE=table.getValueAt(table.getSelectedRow(),a.getColumnByName(table,"Unite")).toString();
             a.numcompte =table.getValueAt(table.getSelectedRow(),a.getColumnByName(table,"NCpte")).toString();
+            a.STOCKSECURITE=Integer.parseInt(table.getValueAt(table.getSelectedRow(),a.getColumnByName(table,"stocksecurite")).toString());
             //JOptionPane.showMessageDialog(this,a.IDCATEGORIE);                    
             m.a=this.a;
             m.setVisible(true);
