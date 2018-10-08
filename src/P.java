@@ -4,6 +4,7 @@ import comptamatiere.REPORT;
 import formulaire.Batiment.Batiment;
 import formulaire.Immobilisation.MaterielEnservice;
 import formulaire.Sortie.Sortie;
+import formulaire.Sortie.ValidationSorti;
 import formulaire.article.Article;
 import formulaire.bon.Bon;
 import formulaire.bon.Validation;
@@ -832,7 +833,8 @@ public class P extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton24MouseExited
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-        // TODO add your handling code here:
+        ValidationSorti os= new ValidationSorti(this,true);
+        os.setVisible(true);
     }//GEN-LAST:event_jButton24ActionPerformed
 
     private void jButton25MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton25MouseEntered

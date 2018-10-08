@@ -2,6 +2,7 @@
 import bdd.Parametre_Connect;
 import comptamatiere.COMPTEUTILISATEUR;
 import control.Controle;
+import formulaire.Compteutilisateur.NouveauCompteUtil;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.sql.PreparedStatement;
@@ -231,6 +232,11 @@ public class Authentification extends javax.swing.JFrame {
         jButton3.setText("Mot de passe ?");
 
         jButton5.setText("Compte");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -330,6 +336,11 @@ public class Authentification extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        NouveauCompteUtil compte= new NouveauCompteUtil(this, true);
+        compte.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
