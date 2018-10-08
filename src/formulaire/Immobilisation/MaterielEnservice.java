@@ -4,7 +4,6 @@ import comptamatiere.ARTICLE;
 import comptamatiere.IMMOBILISATIONMATERIELS;
 import comptamatiere.REPORT;
 import control.Controle;
-import formulaire.Reforme.NouveauPropositionReforme;
 import formulaire.Utilisateur.Utilisateur;
 import java.awt.Color;
 import java.awt.Component;
@@ -878,9 +877,7 @@ IMMOBILISATIONMATERIELS s= new IMMOBILISATIONMATERIELS();
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-          NouveauPropositionReforme u= new NouveauPropositionReforme(new JFrame(),true);
-           u.setVisible(true);
+     
         
     }//GEN-LAST:event_jButton8ActionPerformed
 
