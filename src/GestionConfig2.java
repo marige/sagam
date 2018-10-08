@@ -7,7 +7,6 @@ import formulaire.budget.Budget;
 import formulaire.categorie.Categorie;
 import formulaire.compteD.CompteD;
 import formulaire.compteP.CompteP;
-import formulaire.groupstock.GroupStock;
 import formulaire.typepatrimoine.TypePatrimoine;
 import java.awt.Cursor;
 import javax.swing.JFrame;
@@ -235,8 +234,6 @@ public class GestionConfig2 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        GroupStock g= new GroupStock(new JFrame(),true);
-        g.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 

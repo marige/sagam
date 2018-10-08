@@ -77,6 +77,8 @@ public class NouveauCompteUtil extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         jLabel10.setFont(new java.awt.Font("Vani", 1, 12)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel10.setText("Nom");
