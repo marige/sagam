@@ -3,8 +3,6 @@ package formulaire.Sortie;
 import comptamatiere.DETAILSORTIE;
 import comptamatiere.SORTIE;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -332,7 +330,7 @@ SORTIE sortie = new SORTIE ();
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
          Nouveau n = new Nouveau(new JFrame(),true);
-        n.setVisible(true);
+         n.setVisible(true);
         
     }//GEN-LAST:event_jButton6ActionPerformed
 
