@@ -8,6 +8,7 @@ import comptamatiere.ARTICLE;
 import comptamatiere.BON;
 import comptamatiere.DETAILSORTIE;
 import comptamatiere.SORTIE;
+import control.Controle;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -680,14 +681,14 @@ public class Nouveau extends javax.swing.JDialog {
         int codeA= Integer.parseInt(tableArticle.getValueAt(tableArticle.getSelectedRow(), article.getColumnByName(tableArticle,"Code")).toString());
         try {
             //recuperation des qte non valide de l article concerne et affecté au champ qtenonvalide
-            qtenonvalide.setText(Integer.toString(article.getQteSortiNonValide(codeA)));
+            txtQtenonvalide.setText(Integer.toString(article.getQteSortiNonValide(codeA)));
         } catch (SQLException ex) {
             Logger.getLogger(Nouveau.class.getName()).log(Level.SEVERE, null, ex);
         }
             //recuperation de la quantite théorique sans prendre en compte les sorties non validées 
            int Stocktheorique=Integer.parseInt(tableArticle.getValueAt(tableArticle.getSelectedRow(), d.getColumnByName(tableArticle, "Stock")).toString());
            //reste de la quantité possible de sortir
-           int rest=Stocktheorique-Integer.parseInt(qtenonvalide.getText());
+           int rest=Stocktheorique-Integer.parseInt(txtQtenonvalide.getText());
             StockA.setText(Integer.toString(rest));
            
          txtCode.setText(tableArticle.getValueAt(tableArticle.getSelectedRow(),d.getColumnByName(tableArticle, "Code")).toString());
@@ -720,17 +721,12 @@ public class Nouveau extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this,"cet article n\'est plus disponible dans le stock");
         else{
             // d.sortieParLot(tableLot, TableArticle, txtQte.getText(), txtCode.getText(), txtarticle.getText());
-
-            int sous1=0;
-            int rest=Integer.parseInt(txtQte.getText());;
+            int rest=Integer.parseInt(txtQte.getText());
             int test=Integer.parseInt(txtQte.getText());
-            for(int i=0; i<tableLot.getRowCount();i++){
-                    Object[] Obj = {txtCode.getText(), txtarticle.getText(),qteLigne,puLigne,idDetailBonLigne,type};
+                    Object[] Obj = {txtCode.getText(), txtarticle.getText(),txtQte.getText()};
                     Model.addRow(Obj);
                     TableDetail.setModel(Model);
                     //quantité article dejà sortie
-                    sous1=sous1;
-                }
             }
             int retour=Integer.parseInt(StockA.getText())-Integer.parseInt(txtQte.getText());
             tableArticle.setValueAt(retour, tableArticle.getSelectedRow(),d.getColumnByName(tableArticle, "Stock"));//mise ajour de la cellule qte de l article servi
@@ -738,7 +734,6 @@ public class Nouveau extends javax.swing.JDialog {
             txtarticle.setText("");
             txtCode.setText("");
             txtQte.setText("");
-            txtMontant.setText("");
             StockA.setText("");
     }//GEN-LAST:event_AjouterActionPerformed
 
@@ -834,7 +829,7 @@ public class Nouveau extends javax.swing.JDialog {
                 tableArticle.setModel(article.getDefaulTableModel("select iDARTICLE as Code,libcategorie as Categorie, libarticle as Article,article.STOCKACTU as Stock,PRIXUNITAIRE as Pu FROM ARTICLE,CATEGORIE WHERE ARTICLE.IDCATEGORIE=CATEGORIE.IDCATEGORIE "));
                 alS=b.getComboELement("select idservice,serv from service order by serv", cmbService);
                 codeService.setText(alS.get(cmbService.getSelectedIndex()).toString());
-                String[] tab = {"Code", "Article", "Qte", "PU","Ligne","Type"};
+                String[] tab = {"Code", "Article", "Qte"};
                 Model.setColumnIdentifiers(tab);
                 TableDetail.setModel(Model); 
                 
