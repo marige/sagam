@@ -306,7 +306,7 @@ SORTIE sortie = new SORTIE ();
     }// </editor-fold>//GEN-END:initComponents
     private void chargement(){
          try {        
-            tableSortie.setModel(sortie.getDefaulTableModel("select idSORTIE,DATESORTIE,LIBBUR as Bureau,LIBSERVICE as Service ,MOTIF,NUMPJ,VALIDE from SORTIE,SERVICE,BUREAU WHERE SORTIE.idBUREAU =BUREAU.idBUREAU  AND BUREAU.idSERVICE =SERVICE.idSERVICE order by idsortie desc"));
+            tableSortie.setModel(sortie.getDefaulTableModel("select idSORTIE,DATESORTIE,LIBBUR as Bureau,LIBSERVICE as Service ,VALIDE from SORTIE,SERVICE,BUREAU WHERE SORTIE.idBUREAU =BUREAU.idBUREAU  AND BUREAU.idSERVICE =SERVICE.idSERVICE order by idsortie desc"));
          } catch (SQLException ex) {
            JOptionPane.showMessageDialog(this, ex.getMessage());
         }

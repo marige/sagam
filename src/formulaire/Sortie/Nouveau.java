@@ -742,29 +742,7 @@ public class Nouveau extends javax.swing.JDialog {
     }//GEN-LAST:event_AjouterActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        int selectedIndex = tabBondesortie.getSelectedIndex();
-        selectedIndex = (selectedIndex - 1) % tabBondesortie.getTabCount();
-        tabBondesortie.setSelectedIndex(selectedIndex);
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void retirerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirerActionPerformed
-        //recuperation codearticle a retiere
-        int CodeArticle=Integer.parseInt(TableDetail.getValueAt(TableDetail.getSelectedRow(),b.getColumnByName(TableDetail, "code")).toString());
-        //recuperation qte a retiere
-        int Qte=Integer.parseInt(TableDetail.getValueAt(TableDetail.getSelectedRow(),b.getColumnByName(TableDetail, "qte")).toString());
-         //recuperation de la ligne concernee dans table article je precise la l indexe de la colonne codearticle dans tablearticle
-        int ligne=b.getRowByCode(tableArticle,0, CodeArticle);
-        JOptionPane.showMessageDialog(this, ligne);
-        ((DefaultTableModel) TableDetail.getModel()).removeRow(TableDetail.getSelectedRow());
-         int retirer=0;
-            // Integer.parseInt(TableDetail.getValueAt(TableDetail.getSelectedRow(),d.getColumnByName(TableDetail, "r")).toString()),
-                                //valeur         ligne                             colonne
-        tableArticle.setValueAt(retirer,d.getRowByCode(tableArticle,0,1),d.getColumnByName(tableArticle, "Stock"));
-    }//GEN-LAST:event_retirerActionPerformed
-
-    private void btnEnregistrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnregistrerActionPerformed
-        if(TableDetail.getRowCount()==0)
+         if(TableDetail.getRowCount()==0)
         JOptionPane.showMessageDialog(this,"choisissez les biens à sortir");
         else{
             //enregistrement de la sortie
@@ -772,7 +750,7 @@ public class Nouveau extends javax.swing.JDialog {
             if (reponse == JOptionPane.YES_OPTION) {
                 try {
                     String valeur[] = {codeBureau.getText(),sortie.getDateChoisie(DateSortie)};
-                    int i = sortie.Insertion("SORTIE(idBUREAU,NUMPJ,DATESORTIE,budget,ATITRE,OBJET,MOTIF)", valeur);
+                    int i = sortie.Insertion("SORTIE(idBUREAU,DATESORTIE)", valeur);
                     JOptionPane.showMessageDialog(this,i+" bon de sortie enrégistré");
                     int g=0;
                     int totalSortie=0;
@@ -782,22 +760,16 @@ public class Nouveau extends javax.swing.JDialog {
                     int immo;
                     int codegenre=0;
                     for (int k=0; k< TableDetail.getRowCount();k++){
-                        String iddetailbon=TableDetail.getValueAt(k,b.getColumnByName(TableDetail, "Ligne")).toString();
                         String qte=TableDetail.getValueAt(k,b.getColumnByName(TableDetail, "qte")).toString();
-                        String pu= TableDetail.getValueAt(k,b.getColumnByName(TableDetail, "pu")).toString();
-                       String idarticle=TableDetail.getValueAt(k,b.getColumnByName(TableDetail, "code")).toString();
-                        String type=TableDetail.getValueAt(k,b.getColumnByName(TableDetail, "Type")).toString();
-                       
-                       //JOptionPane.showMessageDialog(this, idarticle + " article(s) du bon N°"+idSortie+" engistré(s)");
-                       /*je prend le numero de compte de la categorie à laquelle appartient l article,je verifie si cest compri entre 24000 et 24999 alors cest une immo=1*/
+                       String idarticle=TableDetail.getValueAt(k,b.getColumnByName(TableDetail, "code")).toString();                  
                        String numerocompte=b.getOneResult("select numerocompte from article,categorie where article.idarticle="+idarticle+" and article.idcategorie=categorie.idcategorie");
                        if ((Integer.parseInt(numerocompte)>=24000)&&( Integer.parseInt(numerocompte)<24999)){
                            immo=1;
                        }else{
                            immo=0;
                        }
-                        String valeurD[]={iddetailbon,qte,pu,idSortie,Integer.toString(immo),Integer.toString(codegenre),idarticle,qte,type};
-                        sortie.Insertion("DETAILSORTIE(idDETAILBON,QTE_SORTIE,PU_SORTIE,idSortie,immo,codegenere,idarticle,nonattribue,type)", valeurD);
+                        String valeurD[]={qte,idSortie,Integer.toString(immo),Integer.toString(codegenre),idarticle};
+                        sortie.Insertion("DETAILSORTIE(QTE_SORTIE,idSortie,immo,codegenere,idarticle)", valeurD);
                         g++;
                         totalSortie=totalSortie+Integer.parseInt(qte);
                     }
@@ -817,6 +789,25 @@ public class Nouveau extends javax.swing.JDialog {
 
             }
         }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void retirerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirerActionPerformed
+        //recuperation codearticle a retiere
+        int CodeArticle=Integer.parseInt(TableDetail.getValueAt(TableDetail.getSelectedRow(),b.getColumnByName(TableDetail, "code")).toString());
+        //recuperation qte a retiere
+        int Qte=Integer.parseInt(TableDetail.getValueAt(TableDetail.getSelectedRow(),b.getColumnByName(TableDetail, "qte")).toString());
+         //recuperation de la ligne concernee dans table article je precise la l indexe de la colonne codearticle dans tablearticle
+        int ligne=b.getRowByCode(tableArticle,0, CodeArticle);
+        JOptionPane.showMessageDialog(this, ligne);
+        ((DefaultTableModel) TableDetail.getModel()).removeRow(TableDetail.getSelectedRow());
+         int retirer=0;
+            // Integer.parseInt(TableDetail.getValueAt(TableDetail.getSelectedRow(),d.getColumnByName(TableDetail, "r")).toString()),
+                                //valeur         ligne                             colonne
+        tableArticle.setValueAt(retirer,d.getRowByCode(tableArticle,0,1),d.getColumnByName(tableArticle, "Stock"));
+    }//GEN-LAST:event_retirerActionPerformed
+
+    private void btnEnregistrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnregistrerActionPerformed
+       
     }//GEN-LAST:event_btnEnregistrerActionPerformed
 
     private void tabBonComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tabBonComponentShown
@@ -842,17 +833,11 @@ public class Nouveau extends javax.swing.JDialog {
              TableDetail.getColumn("Code").setPreferredWidth(0);
              TableDetail.getColumn("Code").setMaxWidth(0);
              
-              TableDetail.getColumn("Type").setMinWidth(0);
-             TableDetail.getColumn("Type").setPreferredWidth(0);
-             TableDetail.getColumn("Type").setMaxWidth(0);
              
              TableDetail.getColumn("Qte").setMinWidth(65);
              TableDetail.getColumn("Qte").setPreferredWidth(65);
              TableDetail.getColumn("Qte").setMaxWidth(65);
              
-             TableDetail.getColumn("PU").setMinWidth(95);
-             TableDetail.getColumn("PU").setPreferredWidth(95);
-             TableDetail.getColumn("PU").setMaxWidth(95);
                 // codeService.setText(alS.get(cmbService.getSelectedIndex()).toString());
               txtarticle.setHorizontalAlignment(txtarticle.CENTER); // setHorizontalAlignment
               
