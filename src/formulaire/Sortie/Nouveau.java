@@ -100,8 +100,9 @@ public class Nouveau extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(2000, 2000));
-        setMinimumSize(new java.awt.Dimension(700, 600));
+        setMinimumSize(new java.awt.Dimension(600, 500));
         setPreferredSize(new java.awt.Dimension(600, 500));
+        setResizable(false);
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentShown(java.awt.event.ComponentEvent evt) {
                 formComponentShown(evt);
@@ -840,10 +841,6 @@ public class Nouveau extends javax.swing.JDialog {
              TableDetail.getColumn("Code").setMinWidth(0);
              TableDetail.getColumn("Code").setPreferredWidth(0);
              TableDetail.getColumn("Code").setMaxWidth(0);
-             
-             TableDetail.getColumn("Ligne").setMinWidth(0);
-             TableDetail.getColumn("Ligne").setPreferredWidth(0);
-             TableDetail.getColumn("Ligne").setMaxWidth(0);
              
               TableDetail.getColumn("Type").setMinWidth(0);
              TableDetail.getColumn("Type").setPreferredWidth(0);

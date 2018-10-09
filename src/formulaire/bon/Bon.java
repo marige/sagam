@@ -349,7 +349,7 @@ public class Bon extends javax.swing.JDialog {
     private void txtComptePrincipalCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtComptePrincipalCaretUpdate
      if(txtComptePrincipal.getText()!=""){
         try {
-             table.setModel(b.getDefaulTableModel("select idbon,typebon,nbon,datebon,numproforma,chapitre,raisonsocial as Fournisseur,valide from bon,entree,fournisseur where bon.idbon=entree.idbon and "+
+             table.setModel(b.getDefaulTableModel("select idbon,nbon,datebon,numproforma,chapitre,raisonsocial as Fournisseur,valide from bon,entree,fournisseur where bon.idbon=entree.idbon and "+
                      "bon.idfournisseur=fournisseur.idfournisseur and "+cmbSearch.getSelectedItem().toString() +" like '%"+txtComptePrincipal.getText()+"%'"));
             } catch (SQLException ex) {
         } 
@@ -465,7 +465,7 @@ public class Bon extends javax.swing.JDialog {
             table.getTableHeader().setForeground(Color.BLACK);
             
 
-             table.setModel(b.getDefaulTableModel("select bon.idbon,typebon as Type,nbon as 'Bon de Commande',raisonsocial as Fournisseur,Montant,datebon as 'Date Bon de Cde',numproforma as 'Pro Format',chapitre from bon,fournisseur where bon.idfournisseur=fournisseur.idfournisseur"));
+             table.setModel(b.getDefaulTableModel("select bon.idbon,nbon as 'Bon de Commande',raisonsocial as Fournisseur,datebon as 'Date Bon de Cde' from bon,fournisseur where bon.idfournisseur=fournisseur.idfournisseur"));
              //b.resizeColumnWidth(table);
              table.getTableHeader().setFont(new Font("Times New Roman",Font.CENTER_BASELINE,14));
               table.getColumnModel().getColumn(0).setPreferredWidth(5);
@@ -478,24 +478,16 @@ public class Bon extends javax.swing.JDialog {
              TableDetail.getColumn("ligne").setMinWidth(0);
              TableDetail.getColumn("ligne").setPreferredWidth(0);
              TableDetail.getColumn("ligne").setMaxWidth(0);
-             
-              TableDetail.getColumn("type").setMinWidth(0);
-             TableDetail.getColumn("type").setPreferredWidth(0);
-             TableDetail.getColumn("type").setMaxWidth(0);
-       
+          
              TableDetail.getColumn("Qte").setPreferredWidth(100); 
              TableDetail.getColumn("Pu").setPreferredWidth(100);
              TableDetail.getColumn("Montant").setPreferredWidth(200);
              TableDetail.getColumn("Designation").setPreferredWidth(300);
              
              table.getColumn("idbon").setPreferredWidth(80);
-             table.getColumn("Type").setPreferredWidth(100);
              table.getColumn("Bon de Commande").setPreferredWidth(150);
              table.getColumn("Date Bon de Cde").setPreferredWidth(100);
-             table.getColumn("Pro Format").setPreferredWidth(120);
-             table.getColumn("chapitre").setPreferredWidth(200);
              table.getColumn("Fournisseur").setPreferredWidth(200);
-             table.getColumn("Montant").setPreferredWidth(120);
              
         } catch (SQLException ex) {
 

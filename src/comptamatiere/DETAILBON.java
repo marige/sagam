@@ -16,7 +16,7 @@ public class DETAILBON extends BON{
    
    
    public void afficherDetailBon(JTable jt,int idBon) throws SQLException{
-       ResultSet rs=getResultSet("select iddetailbon,detailbon.idarticle,libarticle,detailbon.qte,detailbon.pu,detailbon.qte*detailbon.pu as montant,detailbon.idmagasin,tva from detailbon,article where detailbon.idarticle=article.idarticle and idbon="+idBon);
+       ResultSet rs=getResultSet("select iddetailbon,detailbon.idarticle,libarticle,detailbon.qte,detailbon.idmagasin from detailbon,article where detailbon.idarticle=article.idarticle and idbon="+idBon);
        DefaultTableModel model=(DefaultTableModel) jt.getModel();
        model.setRowCount(0);
        while(rs.next()){
