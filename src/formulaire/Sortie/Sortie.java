@@ -376,7 +376,7 @@ SORTIE sortie = new SORTIE ();
     private void txtComptePrincipalCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtComptePrincipalCaretUpdate
         if(txtComptePrincipal.getText()!=""){
             try {
-                tableSortie.setModel(sortie.getDefaulTableModel("select  idSORTIE,DATESORTIE,LIBBUR,LIBSERVICE ,MOTIF,VALIDE from SORTIE,SERVICE,BUREAU WHERE SORTIE.idBUREAU =BUREAU.idBUREAU  AND BUREAU.idSERVICE =SERVICE.idSERVICE AND "
+                tableSortie.setModel(sortie.getDefaulTableModel("select  idSORTIE,DATESORTIE,LIBBUR,LIBSERVICE,VALIDE from SORTIE,SERVICE,BUREAU WHERE SORTIE.idBUREAU =BUREAU.idBUREAU  AND BUREAU.idSERVICE =SERVICE.idSERVICE AND "
                         +cmbSearch.getSelectedItem().toString() +" like '%"+txtComptePrincipal.getText()+"%'"));
         } catch (SQLException ex) {
         }
@@ -405,21 +405,15 @@ SORTIE sortie = new SORTIE ();
              TableDetail.getColumn("ligne").setPreferredWidth(0);
              TableDetail.getColumn("ligne").setMaxWidth(0);
              
-              TableDetail.getColumn("type").setMinWidth(0);
+             TableDetail.getColumn("type").setMinWidth(0);
              TableDetail.getColumn("type").setPreferredWidth(0);
              TableDetail.getColumn("type").setMaxWidth(0);
              
              TableDetail.getColumn("Qte").setMinWidth(65);
              TableDetail.getColumn("Qte").setPreferredWidth(65);
              TableDetail.getColumn("Qte").setMaxWidth(65);
-             
-             TableDetail.getColumn("Pu").setMinWidth(95);
-             TableDetail.getColumn("Pu").setPreferredWidth(95);
-             TableDetail.getColumn("Pu").setMaxWidth(95);
-             
-             TableDetail.getColumn("Montant").setMinWidth(120);
-             TableDetail.getColumn("Montant").setPreferredWidth(120);
-             TableDetail.getColumn("Montant").setMaxWidth(120);
+            
+          
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }

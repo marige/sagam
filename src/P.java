@@ -740,7 +740,7 @@ public class P extends javax.swing.JFrame {
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
         MaterielEnservice m= new MaterielEnservice (new JFrame(),true);
-        //  m.setVisible(true);
+          m.setVisible(true);
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton14MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseExited
