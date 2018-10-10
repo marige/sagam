@@ -416,9 +416,8 @@ public class Bon extends javax.swing.JDialog {
 
         try {
              String bonSelect=table.getValueAt(table.getSelectedRow(),b.getColumnByName(table,"idbon")).toString();
-            String codeB=b.getOneResult("select idbudget from bon where idbon="+bonSelect);  
             String codeF=b.getOneResult("select idFournisseur from bon where idbon="+bonSelect);    
-                b.printReportBon(bonSelect,codeB,codeF);    
+                b.printReportBon(bonSelect,codeF);    
         } catch(IndexOutOfBoundsException ex){
           JOptionPane.showMessageDialog(this,"Choisissez le bon à imprimer");
        }

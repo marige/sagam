@@ -20,14 +20,14 @@ public class DETAILBON extends BON{
        DefaultTableModel model=(DefaultTableModel) jt.getModel();
        model.setRowCount(0);
        while(rs.next()){
-         model.addRow(new Object[]{rs.getInt("iddetailbon"),rs.getInt("idarticle"),rs.getString("libarticle"),rs.getString("qte"),rs.getString("pu"),rs.getString("montant"),rs.getString("idmagasin"),rs.getString("tva")});
+         model.addRow(new Object[]{rs.getInt("iddetailbon"),rs.getInt("idarticle"),rs.getString("libarticle"),rs.getString("qte"),rs.getString("idmagasin")});
        }
        jt.setModel(model);
    }
    
      
    public void afficherDetailBonM(JTable jt,int idBon) throws SQLException{
-       ResultSet rs=getResultSet("select detailbon.qte*detailbon.pu as Montantttc,detailbon.idarticle,libarticle,detailbon.qte,detailbon.pu,detailbon.idmagasin,tva from detailbon,article where detailbon.idarticle=article.idarticle and idbon="+idBon);
+       ResultSet rs=getResultSet("select  detailbon.idarticle,libarticle,detailbon.qte,detailbon.idmagasin from detailbon,article where detailbon.idarticle=article.idarticle and idbon="+idBon);
        DefaultTableModel model=(DefaultTableModel) jt.getModel();
        model.setRowCount(0);
        while(rs.next()){

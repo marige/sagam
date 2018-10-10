@@ -376,7 +376,8 @@ SORTIE sortie = new SORTIE ();
     private void txtComptePrincipalCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_txtComptePrincipalCaretUpdate
         if(txtComptePrincipal.getText()!=""){
             try {
-                tableSortie.setModel(sortie.getDefaulTableModel("select  idSORTIE,DATESORTIE,LIBBUR,LIBSERVICE ,MOTIF,NUMPJ,VALIDE from SORTIE,SERVICE,BUREAU WHERE SORTIE.idBUREAU =BUREAU.idBUREAU  AND BUREAU.idSERVICE =SERVICE.idSERVICE AND "+cmbSearch.getSelectedItem().toString() +" like '%"+txtComptePrincipal.getText()+"%'"));
+                tableSortie.setModel(sortie.getDefaulTableModel("select  idSORTIE,DATESORTIE,LIBBUR,LIBSERVICE ,MOTIF,VALIDE from SORTIE,SERVICE,BUREAU WHERE SORTIE.idBUREAU =BUREAU.idBUREAU  AND BUREAU.idSERVICE =SERVICE.idSERVICE AND "
+                        +cmbSearch.getSelectedItem().toString() +" like '%"+txtComptePrincipal.getText()+"%'"));
         } catch (SQLException ex) {
         }
         }
