@@ -55,8 +55,6 @@ public class Validation extends javax.swing.JFrame {
         txtDateFacture = new com.toedter.calendar.JDateChooser();
         txtDateBordereau = new com.toedter.calendar.JDateChooser();
         jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        txtMontantBonReception = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         txtIdBon = new javax.swing.JTextField();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -174,11 +172,6 @@ public class Validation extends javax.swing.JFrame {
 
         jLabel27.setText("Date Bordereau");
 
-        jLabel28.setText("Montant Bon");
-
-        txtMontantBonReception.setEditable(false);
-        txtMontantBonReception.setForeground(new java.awt.Color(255, 0, 102));
-
         jLabel29.setText("NUM BON");
 
         txtIdBon.setEditable(false);
@@ -190,18 +183,15 @@ public class Validation extends javax.swing.JFrame {
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addContainerGap(28, Short.MAX_VALUE)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel28)
-                    .addComponent(jLabel29))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel29)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(txtMontantBonReception, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addComponent(txtIdBon, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                         .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -225,9 +215,6 @@ public class Validation extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtMontantBonReception, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel28))
-                    .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtRefFacture, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel18))
                     .addComponent(jLabel25)
@@ -250,14 +237,14 @@ public class Validation extends javax.swing.JFrame {
 
             },
             new String [] {
-                "iddetailbon", "Code article", "Libelle", "QTE", "PU", "MontantTTC", "Magasin", "TVA"
+                "iddetailbon", "Code article", "Libelle", "QTE", "Magasin"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.Long.class, java.lang.Long.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -367,7 +354,7 @@ public class Validation extends javax.swing.JFrame {
                     int nligne=tableReception.getRowCount(),numligne=0,nq=e.getColumnByName(tableReception,"qte"),nc=e.getColumnByName(tableReception,"code article");
                    // int ns=e.getColumnByName(tableReception, "iddetailbon");
                     while(numligne<nligne){
-                        e.insUpdateDel("update article set stockactu=stockactu+"+tableReception.getValueAt(numligne,nq) +",pum="+d.getPUmArticle(tableReception.getValueAt(numligne,nc).toString())+" where idarticle="+tableReception.getValueAt(numligne,nc));
+                        e.insUpdateDel("update article set stockactu=stockactu+"+tableReception.getValueAt(numligne,nq)+" where idarticle="+tableReception.getValueAt(numligne,nc));
                      //   e.insUpdateDel("update detailbon set qtestock=qtestock+"+tableReception.getValueAt(numligne,nq)+" where iddetailbon="+tableReception.getValueAt(numligne,ns));
                         numligne++;
                     };
@@ -393,7 +380,6 @@ public class Validation extends javax.swing.JFrame {
         idBon=tableArticle.getValueAt(tableArticle.getSelectedRow(),e.getColumnByName(tableArticle, "idBon")).toString();
         try {
        //     JOptionPane.showMessageDialog(this,idBon);
-            txtMontantBonReception.setText(e.formatageMontant(Double.parseDouble(e.getOneResult("select montant from bon where idbon="+idBon))));
             e.getObjetEntree(idBon);
             txtRefFacture.setText(e.REFFACTURE);
             e.setAfficherDate(txtDateFacture, e.DATEFACTURE.toString());
@@ -473,7 +459,6 @@ public class Validation extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel10;
@@ -488,7 +473,6 @@ public class Validation extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser txtDateBordereau;
     private com.toedter.calendar.JDateChooser txtDateFacture;
     private javax.swing.JTextField txtIdBon;
-    private javax.swing.JTextField txtMontantBonReception;
     private javax.swing.JTextField txtRefBordereau;
     private javax.swing.JTextField txtRefFacture;
     // End of variables declaration//GEN-END:variables

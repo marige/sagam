@@ -13,10 +13,10 @@ public class DETAILSORTIE extends SORTIE {
    //SORTIE Sortie= new SORTIE(); 
    
     public void afficheDetail(JTable Jt, int Idetail) throws SQLException{
-            ResultSet req=getResultSet("select idSortie,detailsortie.QTE,detailsortie.pu, detailsortie.idDETAILBON,article.idARTICLE,LIBARTICLE from detailsortie,detailbon,article where idSORTIE= 16 and detailsortie.idDETAILBON=detailbon.idDETAILBON and detailbon.idARTICLE=article.idARTICLE ");
+            ResultSet req=getResultSet("select idSortie,detailsortie.QTE, detailsortie.idDETAILBON,article.idARTICLE,LIBARTICLE from detailsortie,detailbon,article where idSORTIE= 16 and detailsortie.idDETAILBON=detailbon.idDETAILBON and detailbon.idARTICLE=article.idARTICLE ");
             DefaultTableModel model=(DefaultTableModel) Jt.getModel();
             while  (req.next()) {
-               Object[] Obj = {req.getInt("article.idARTICLE"),req.getString("LIBARTICLE"),req.getInt("detailsortie.QTE"),req.getDouble("detailsortie.pu"),req.getInt("detailsortie.idDETAILBON"),req.getInt("detailsortie.idDETAILBON")};
+               Object[] Obj = {req.getInt("article.idARTICLE"),req.getString("LIBARTICLE"),req.getInt("detailsortie.QTE"),req.getInt("detailsortie.idDETAILBON"),req.getInt("detailsortie.idDETAILBON")};
                model.addRow(Obj);
                Jt.setModel(model); 
                }
@@ -26,7 +26,7 @@ public class DETAILSORTIE extends SORTIE {
     ARTICLE a = new ARTICLE();
     
     public void saveJournalSortie(JTable jt,String date,String numBon) throws SQLException{
-       String champ="livrejournal(dateoperation,idarticle,idbonsortie,qtesortie,pusortie,qtestock,pustock)";
+       String champ="livrejournal(dateoperation,idarticle,idbonsortie,qtesortie,qtestock)";
        //comptage du nombre de ligne de la jtable
        int nrow=jt.getRowCount();
        int i=0; 
@@ -38,14 +38,12 @@ public class DETAILSORTIE extends SORTIE {
           valeur[1]=jt.getValueAt(i,getColumnByName(jt,"code")).toString();
           valeur[2]=numBon;
           valeur[3]=jt.getValueAt(i,getColumnByName(jt,"qte")).toString();
-          valeur[4]=jt.getValueAt(i,getColumnByName(jt,"pu")).toString();
           //methode qui renvoie les info de l'article
           hma=a.getArticleInfo(Integer.parseInt(valeur[1]));
           //addition du stock actu et du nouveau chiffre
                
           //valeur[5]=String.valueOf(Integer.parseInt(hma.get("STOCKACTU").toString())-Integer.parseInt(valeur[3].toString()));
           valeur[5]=   jt.getValueAt(i,getColumnByName(jt,"qte")).toString();
-          valeur[6]=jt.getValueAt(i,getColumnByName(jt,"pu")).toString();  //hma.get("PRIXUNITAIRE").toString();       
           this.Insertion(champ, valeur);
           //update du stock
           insUpdateDel("update article set stockactu=stockactu-"+valeur[5]+" where idarticle="+valeur[1]);
@@ -53,14 +51,8 @@ public class DETAILSORTIE extends SORTIE {
        }
     }
     
-    public void miseJourDesStock(String code,String ligne,String qte,String type) throws SQLException{
-        if(type.equalsIgnoreCase("inv"))       
-            this.insUpdateDel("update detailinventaire set qte_res_stockinv=qte_res_stockinv-("+qte+") where iddetailinventaire="+ligne);      
-        else if(type.equalsIgnoreCase("bc"))
-            this.insUpdateDel("update detailbon set qtestock=qtestock-("+qte+") where iddetailbon="+ligne);
-        else if(type.equalsIgnoreCase("StkIni"))
-            this.insUpdateDel("update article set Qte_Res_StockInit=Qte_Res_StockInit-("+qte+") where idarticle="+ligne);
-        //mise à jour du stock dans la table article
+    public void miseJourDesStock(String code,String qte) throws SQLException{
+               //mise à jour du stock dans la table article
         insUpdateDel("update article set stockactu=stockactu-"+qte+" where idarticle="+code);
     }
     
@@ -68,7 +60,7 @@ public class DETAILSORTIE extends SORTIE {
         ResultSet rs=this.getResultSet("select iddetailbon,idarticle,qte_sortie,type from detailsortie where idsortie="+idSortie);
         while(rs.next()){
           //  return "detail bon "+rs.getString("iddetailbon")+"qte:-"+rs.getString("qte_sortie")+"type: "+rs.getString("type");
-           miseJourDesStock(rs.getString("idarticle"),rs.getString("iddetailbon"),"-"+rs.getString("qte_sortie"),rs.getString("type"));
+           miseJourDesStock(rs.getString("idarticle"),"-"+rs.getString("qte_sortie"));
          //  this.insUpdateDel("update article set stockactu=stockactu+"+rs.getString("qte_sortie")+" where idarticle="+rs.getString("idarticle"));        
         }
         rs.close();

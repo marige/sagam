@@ -34,7 +34,7 @@ public class SORTIE extends ModelDb {
    
    }
    public void afficheDetailNonValider(JTable Jt, int Id) throws SQLException{
-        ResultSet req=getResultSet("SELECT article.idarticle,DETAILSORTIE.idDETAILBON as ligne, article.LIBARTICLE, DETAILSORTIE.QTE_SORTIE,DETAILSORTIE.type FROM DETAILSORTIE,article WHERE idSORTIE =" + Id + " AND DETAILSORTIE.idARTICLE = article.idARTICLE  ");
+        ResultSet req=getResultSet("SELECT article.idarticle, article.LIBARTICLE, DETAILSORTIE.QTE_SORTIE FROM DETAILSORTIE,article WHERE idSORTIE =" + Id + " AND DETAILSORTIE.idARTICLE = article.idARTICLE  ");
         DefaultTableModel model=(DefaultTableModel) Jt.getModel();
         while  (req.next()) {
            Object[] Obj = {req.getString("idarticle"),req.getString("ligne"),req.getString("LIBARTICLE"),req.getString("QTE_SORTIE"),req.getDouble("PU_SORTIE"),req.getInt("QTE_SORTIE")*req.getDouble("PU_SORTIE"),req.getString("type")};
