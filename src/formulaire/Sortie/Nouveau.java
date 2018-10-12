@@ -123,13 +123,11 @@ public class Nouveau extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(205, 205, 205))
+                .addGap(200, 200, 200))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
         );
 
         tabBondesortie.setBackground(new java.awt.Color(204, 255, 204));
@@ -718,15 +716,11 @@ public class Nouveau extends javax.swing.JDialog {
 
     private void AjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AjouterActionPerformed
         if(txtQte.getText().isEmpty())
-        JOptionPane.showMessageDialog(this,"Saisissez la quantité à sortir");
-        else if(Integer.parseInt(txtQte.getText())>Integer.parseInt(StockA.getText()))
-        JOptionPane.showMessageDialog(this,"La quantité demandée ne peut être servie");
-        else if(Integer.parseInt(StockA.getText())-Integer.parseInt(txtQtenonvalide.getText())<=0)
-            JOptionPane.showMessageDialog(this,"cet article n\'est plus disponible dans le stock");
+            JOptionPane.showMessageDialog(this,"Saisissez la quantité à sortir");
+        else if(Integer.parseInt(StockA.getText())-Integer.parseInt("0"+txtQtenonvalide.getText())<=0)
+            JOptionPane.showMessageDialog(this,"La quantité demandée ne peut être servie");
         else{
             // d.sortieParLot(tableLot, TableArticle, txtQte.getText(), txtCode.getText(), txtarticle.getText());
-            int rest=Integer.parseInt(txtQte.getText());
-            int test=Integer.parseInt(txtQte.getText());
                     Object[] Obj = {txtCode.getText(), txtarticle.getText(),txtQte.getText()};
                     Model.addRow(Obj);
                     TableDetail.setModel(Model);

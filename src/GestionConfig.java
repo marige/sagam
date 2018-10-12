@@ -2,7 +2,6 @@
 import formulaire.Compteutilisateur.NouveauCompteUtil;
 import formulaire.Institution.Institution;
 import formulaire.Magasin.Magasin;
-import formulaire.budget.Budget;
 import formulaire.categorie.Categorie;
 import formulaire.compteD.CompteD;
 import formulaire.compteP.CompteP;
@@ -187,8 +186,7 @@ public class GestionConfig extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        Budget b = new Budget(new JFrame(),true);
-        b.setVisible(true);
+      
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 

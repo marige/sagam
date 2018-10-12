@@ -321,11 +321,10 @@ public class ValidationSorti extends javax.swing.JDialog {
                      //permet de remettre les articles dans le stock avant suppression                     
                     int g=0;
                     for(int k=0; k< TableDetail2.getRowCount();k++){
-                        String ligne=TableDetail2.getValueAt(k,s.getColumnByName(TableDetail2, "ligne")).toString();
                         String qte=TableDetail2.getValueAt(k,s.getColumnByName(TableDetail2, "qte")).toString();
                         String type=TableDetail2.getValueAt(k,s.getColumnByName(TableDetail2, "type")).toString();
                         String code=TableDetail2.getValueAt(k,s.getColumnByName(TableDetail2, "code")).toString();
-                        d.miseJourDesStock(code,ligne,qte,type);
+                        d.miseJourDesStock(code,qte,type);
                         g++;
                     }
                     s.insUpdateDel("update sortie set valide=1 where idsortie="+Numero.getText());

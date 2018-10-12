@@ -1150,7 +1150,7 @@ public class Modification extends javax.swing.JDialog {
         if(reponseO==JOptionPane.YES_OPTION){
             try {
                // JOptionPane.showMessageDialog(this, idBon+" budget "+codeB.getText()+" fournisseur:"+codeF.getText() );
-                b.printReportBon(idBon,codeB.getText(),codeF.getText());
+                b.printReportBon(idBon,codeF.getText());
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(this,"section 8"+ex.getMessage());
             }

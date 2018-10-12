@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="567" leftMargin="14" rightMargin="14" topMargin="14" bottomMargin="14" uuid="68dd803b-3951-4f49-90bd-4f02ebea1dec">
 	<property name="ireport.zoom" value="1.5"/>
-	<property name="ireport.x" value="118"/>
-	<property name="ireport.y" value="192"/>
+	<property name="ireport.x" value="61"/>
+	<property name="ireport.y" value="336"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -48,12 +48,11 @@
 	<parameter name="pays" class="java.lang.String"/>
 	<parameter name="direction" class="java.lang.String"/>
 	<parameter name="service" class="java.lang.String"/>
-	<parameter name="chapitre" class="java.lang.String"/>
 	<parameter name="VilleInst" class="java.lang.String"/>
 	<parameter name="idoperation" class="java.lang.String"/>
 	<queryString>
-		<![CDATA[select * from sortie,detailsortie, article,categorie,bureau,budget
-where budget.idbudget=sortie.budget and sortie.idsortie=detailsortie.idsortie and sortie.idbureau=bureau.idbureau
+		<![CDATA[select * from sortie,detailsortie, article,categorie,bureau
+where sortie.idsortie=detailsortie.idsortie and sortie.idbureau=bureau.idbureau
              and article.idarticle=detailsortie.idarticle and 
             article.idcategorie=categorie.idcategorie]]>
 	</queryString>
@@ -63,40 +62,16 @@ where budget.idbudget=sortie.budget and sortie.idsortie=detailsortie.idsortie an
 	<field name="idBUREAU" class="java.lang.Long">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="NUMPJ" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
 	<field name="DATESORTIE" class="java.sql.Date">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="budget" class="java.lang.Integer">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="ATITRE" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="OBJET" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="MOTIF" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="VALIDE" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="CHAPITRE" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
 	<field name="idDETAILSORTIE" class="java.lang.Long">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="idDETAILBON" class="java.lang.Long">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
 	<field name="QTE_SORTIE" class="java.lang.Long">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="PU_SORTIE" class="java.lang.Long">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="immo" class="java.lang.Boolean">
@@ -105,13 +80,7 @@ where budget.idbudget=sortie.budget and sortie.idsortie=detailsortie.idsortie an
 	<field name="codegenere" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="nonattribue" class="java.lang.Integer">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
 	<field name="idarticle" class="java.lang.Integer">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="type" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="IDCATEGORIE" class="java.lang.Long">
@@ -132,7 +101,7 @@ where budget.idbudget=sortie.budget and sortie.idsortie=detailsortie.idsortie an
 	<field name="DATESTOCKINI" class="java.sql.Date">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="PRIXUNITAIRE" class="java.lang.Long">
+	<field name="PRIXUNITAIRE" class="java.lang.Double">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="UNITEMESURE" class="java.lang.String">
@@ -142,6 +111,12 @@ where budget.idbudget=sortie.budget and sortie.idsortie=detailsortie.idsortie an
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="Qte_Res_StockInit" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Pum" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stocksecurite" class="java.lang.Long">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="idCOMPTED" class="java.lang.Long">
@@ -162,81 +137,29 @@ where budget.idbudget=sortie.budget and sortie.idsortie=detailsortie.idsortie an
 	<field name="codeicat" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="idSERVICE" class="java.lang.Long">
+	<field name="idFAMILLE" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="CODEBUR" class="java.lang.String">
+	<field name="idSERVICE" class="java.lang.Long">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<field name="LIBBUR" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="INTERPHONE" class="java.lang.Long">
+	<field name="INTERPHONE" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="IDBUDGET" class="java.lang.Long">
+	<field name="CODEBUR" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="LIBBUDGET" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<field name="SIGLE" class="java.lang.String">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
-	<variable name="TOTALMONTANT" class="java.lang.Double" calculation="Sum">
-		<variableExpression><![CDATA[$F{QTE_SORTIE}*$F{PU_SORTIE}]]></variableExpression>
-	</variable>
 	<variable name="NOMBREUNITE" class="java.lang.Double" calculation="Sum">
 		<variableExpression><![CDATA[$F{QTE_SORTIE}]]></variableExpression>
-	</variable>
-	<variable name="MontantLettre" class="java.lang.String">
-		<variableExpression><![CDATA[new Conversion().getValLettre($V{TOTALMONTANT})]]></variableExpression>
 	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
 		<band height="122" splitType="Stretch">
-			<textField isBlankWhenNull="true">
-				<reportElement x="384" y="31" width="159" height="20" uuid="39566d8c-ab33-4b3f-a8c0-277bec86d468"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{OBJET}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement x="384" y="54" width="159" height="20" uuid="93983b33-87a9-4799-9cd2-57ff065502e1"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{MOTIF}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="319" y="7" width="53" height="20" uuid="9918b4a9-b997-426c-a9e2-c489a1096d83"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" isBold="true"/>
-				</textElement>
-				<text><![CDATA[BUDGET:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="319" y="31" width="59" height="20" uuid="01c506ff-5d71-41b5-9502-0ecac9e39b36"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" isBold="true"/>
-				</textElement>
-				<text><![CDATA[OBJET:]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="324" y="54" width="53" height="20" uuid="3dbf5567-4b63-43a3-bc1c-a83ccd7daf10"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Times New Roman" isBold="true"/>
-				</textElement>
-				<text><![CDATA[MOTIF]]></text>
-			</staticText>
-			<textField isBlankWhenNull="true">
-				<reportElement x="384" y="9" width="100" height="16" uuid="24d62646-3015-4faa-b68b-69d9da555a14"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{SIGLE}]]></textFieldExpression>
-			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement x="2" y="7" width="263" height="97" isPrintWhenDetailOverflows="true" uuid="99091249-9a14-4981-85ba-5f8337de48f2"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
@@ -276,13 +199,6 @@ $P{service}]]></textFieldExpression>
 					<font size="16" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ORDRE DE SORTIE]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="91" y="40" width="100" height="29" uuid="c18b83d7-815f-42f8-a167-438ce2ead369"/>
-				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[A TITRE DE:]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="431" y="11" width="21" height="29" uuid="662bee38-2c9e-4455-b8e6-5563499615dd"/>
@@ -327,11 +243,6 @@ $P{service}]]></textFieldExpression>
 				</textElement>
 				<text><![CDATA[d'ordre au livre journal]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="190" y="40" width="248" height="29" uuid="49dc5454-3f63-4e33-a79e-35ecebb3b8fe"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{ATITRE}]]></textFieldExpression>
-			</textField>
 		</band>
 	</pageHeader>
 	<columnHeader>
@@ -380,17 +291,6 @@ $P{service}]]></textFieldExpression>
 				<text><![CDATA[Qté]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="table_TD" mode="Opaque" x="390" y="1" width="48" height="31" uuid="02b9210d-95b7-4d27-8a3c-1db0dec5b7e1"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="0.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[PU]]></text>
-			</staticText>
-			<staticText>
 				<reportElement x="0" y="1" width="89" height="16" uuid="169ed88a-03fc-4c2f-a331-9f136be0aabc"/>
 				<box>
 					<topPen lineWidth="1.0"/>
@@ -401,18 +301,7 @@ $P{service}]]></textFieldExpression>
 				<text><![CDATA[Numéro]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="table_TD" mode="Opaque" x="438" y="1" width="66" height="31" uuid="e44e5e46-9398-41f3-9aa0-b7b69aa9cd70"/>
-				<box>
-					<topPen lineWidth="1.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="0.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<text><![CDATA[Montant]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="504" y="1" width="63" height="31" uuid="db63d9b8-0af0-4d30-ae82-4680cee85ba2"/>
+				<reportElement x="389" y="1" width="63" height="31" uuid="db63d9b8-0af0-4d30-ae82-4680cee85ba2"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -488,7 +377,7 @@ $P{service}]]></textFieldExpression>
 				<textFieldExpression><![CDATA[$F{UNITEMESURE}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement style="table" x="504" y="0" width="63" height="20" uuid="026e9ade-8f0d-4d2e-a44d-0cb4ad838c09"/>
+				<reportElement style="table" x="389" y="0" width="63" height="20" uuid="026e9ade-8f0d-4d2e-a44d-0cb4ad838c09"/>
 				<box>
 					<topPen lineWidth="0.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -521,19 +410,6 @@ $P{service}]]></textFieldExpression>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{idCOMPTED}]]></textFieldExpression>
 			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement style="table" x="438" y="0" width="66" height="20" uuid="c14c9fb7-5c98-45f5-b4fb-4eb00eaf2c39"/>
-				<box>
-					<topPen lineWidth="0.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="0.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{QTE_SORTIE}*$F{PU_SORTIE}]]></textFieldExpression>
-			</textField>
 			<textField>
 				<reportElement x="360" y="1" width="29" height="19" uuid="f42108f2-feb4-4621-8dc4-b6518ed4db3a"/>
 				<box>
@@ -542,19 +418,6 @@ $P{service}]]></textFieldExpression>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{QTE_SORTIE}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement style="table" x="390" y="1" width="48" height="19" uuid="3d7841a2-301b-4989-baaf-26790e19dde2"/>
-				<box>
-					<topPen lineWidth="0.0"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="0.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{PU_SORTIE}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
@@ -572,6 +435,7 @@ $P{service}]]></textFieldExpression>
 					<topPen lineWidth="0.75"/>
 					<leftPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="10" isUnderline="false"/>
@@ -590,49 +454,12 @@ $P{service}]]></textFieldExpression>
 				</textElement>
 				<text><![CDATA[          TOTAL]]></text>
 			</staticText>
-			<staticText>
-				<reportElement x="390" y="0" width="48" height="23" uuid="4088a7c6-9486-4a7f-8bc6-f14beb6d6a3e"/>
-				<box>
-					<topPen lineWidth="0.75"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-				</box>
-				<textElement verticalAlignment="Middle" markup="none">
-					<font size="12" isUnderline="false"/>
-				</textElement>
-				<text><![CDATA[]]></text>
-			</staticText>
-			<textField>
-				<reportElement mode="Transparent" x="438" y="0" width="66" height="23" backcolor="#C0C0C0" uuid="149d0dd7-76cd-43d2-a0bc-8f198bddecfd"/>
-				<box>
-					<topPen lineWidth="0.75"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="10" isUnderline="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$V{TOTALMONTANT}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement x="504" y="0" width="63" height="23" uuid="d8b69703-a9d7-4a03-8b30-2bd1186cb5d2"/>
-				<box>
-					<topPen lineWidth="0.75"/>
-					<leftPen lineWidth="1.0"/>
-					<bottomPen lineWidth="1.0"/>
-					<rightPen lineWidth="1.0"/>
-				</box>
-				<textElement verticalAlignment="Middle" markup="none">
-					<font size="12" isUnderline="false"/>
-				</textElement>
-				<text><![CDATA[]]></text>
-			</staticText>
 			<textField>
 				<reportElement x="2" y="51" width="181" height="105" uuid="fe5c63d6-b7f9-46cd-a20f-f487bb8e91e6"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="Times New Roman" size="9" isBold="false" isItalic="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Arrêté le présent ordre à "+$V{NOMBREUNITE}+" unité(s) représentant une valeur de "+$V{MontantLettre}+" FCFA dont je certifie l'entrée définitive\n\n"+
+				<textFieldExpression><![CDATA["Arrêté le présent ordre à "+$V{NOMBREUNITE}+" unité(s) dont je certifie l'entrée définitive\n\n"+
 "A "+ $P{VilleInst}+" le " + $F{DATESORTIE}]]></textFieldExpression>
 			</textField>
 			<staticText>
@@ -692,7 +519,7 @@ au  présent  ordre.
 				<textElement verticalAlignment="Top">
 					<font fontName="Times New Roman" size="9" isBold="false" isItalic="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Le comptable des matières sousigné, déclare ce jour, diminué ces prises en charges de "+$V{NOMBREUNITE}+" unité(s) representant une valeur de "+$V{MontantLettre}+" francs dont je certifie la sortie définitive\n\n"+
+				<textFieldExpression><![CDATA["Le comptable des matières sousigné, déclare ce jour, diminué ces prises en charges de "+$V{NOMBREUNITE}+" unité(s) francs dont je certifie la sortie définitive\n\n"+
 "A "+ $P{VilleInst}+" le " + $F{DATESORTIE}]]></textFieldExpression>
 			</textField>
 			<staticText>

@@ -34,7 +34,7 @@ public class SORTIE extends ModelDb {
    
    }
    public void afficheDetailNonValider(JTable Jt, int Id) throws SQLException{
-        ResultSet req=getResultSet("SELECT article.idarticle,DETAILSORTIE.idDETAILBON as ligne, DETAILSORTIE.PU_SORTIE, article.LIBARTICLE, DETAILSORTIE.QTE_SORTIE,DETAILSORTIE.type FROM DETAILSORTIE,article WHERE idSORTIE =" + Id + " AND DETAILSORTIE.idARTICLE = article.idARTICLE  ");
+        ResultSet req=getResultSet("SELECT article.idarticle, article.LIBARTICLE, DETAILSORTIE.QTE_SORTIE FROM DETAILSORTIE,article WHERE idSORTIE =" + Id + " AND DETAILSORTIE.idARTICLE = article.idARTICLE  ");
         DefaultTableModel model=(DefaultTableModel) Jt.getModel();
         while  (req.next()) {
            Object[] Obj = {req.getString("idarticle"),req.getString("ligne"),req.getString("LIBARTICLE"),req.getString("QTE_SORTIE"),req.getDouble("PU_SORTIE"),req.getInt("QTE_SORTIE")*req.getDouble("PU_SORTIE"),req.getString("type")};
@@ -49,8 +49,8 @@ public class SORTIE extends ModelDb {
   REPORT etat= new REPORT();
   public void printReport(String idSortie) throws SQLException, Exception{
        HashMap hm= new HashMap();
-        String req="select * from sortie,detailsortie, article,categorie,bureau,budget "+
-            "where budget.idbudget=sortie.budget and sortie.idsortie=detailsortie.idsortie and sortie.idbureau=bureau.idbureau "+
+        String req="select * from sortie,detailsortie, article,categorie,bureau "+
+            "where sortie.idsortie=detailsortie.idsortie and sortie.idbureau=bureau.idbureau "+
             " and article.idarticle=detailsortie.idarticle and "+
             "article.idcategorie=categorie.idcategorie and sortie.idSORTIE="+idSortie;
             hm=etat.getHashMap("institution");
@@ -81,17 +81,11 @@ public class SORTIE extends ModelDb {
      }
   */
   public SORTIE getObjetSortieFromIdS(String idsortie) throws SQLException{
-  ResultSet rs=getResultSet("SELECT idsortie, idbureau,numpj,datesortie,budget,atitre,objet,motif,chapitre from sortie where idsortie="+idsortie);
+  ResultSet rs=getResultSet("SELECT idsortie, idbureau,datesortie from sortie where idsortie="+idsortie);
         rs.next();
         bureau.idBUREAU=rs.getInt("idbureau");    
         this.idSORTIE=rs.getInt("idsortie");   
-        this.NUMPJ=rs.getString("numpj");
         this.DATESORTIE=rs.getDate("datesortie");
-        this.b.IDBUDGET=rs.getInt("budget");
-        this.ATITRE=rs.getString("atitre");
-        this.OBJET=rs.getString("objet");
-        this.MOTIF=rs.getString("motif");
-        this.chapitre=rs.getString("chapitre");  
         this.s.idSERVICE=Integer.parseInt(this.getOneResult("select idservice from bureau where idbureau="+bureau.idBUREAU));
         rs.close();
         return new SORTIE();

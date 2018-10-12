@@ -20,14 +20,14 @@ public class DETAILBON extends BON{
        DefaultTableModel model=(DefaultTableModel) jt.getModel();
        model.setRowCount(0);
        while(rs.next()){
-         model.addRow(new Object[]{rs.getInt("iddetailbon"),rs.getInt("idarticle"),rs.getString("libarticle"),rs.getString("qte"),rs.getString("pu"),rs.getString("montant"),rs.getString("idmagasin"),rs.getString("tva")});
+         model.addRow(new Object[]{rs.getInt("iddetailbon"),rs.getInt("idarticle"),rs.getString("libarticle"),rs.getString("qte"),rs.getString("idmagasin")});
        }
        jt.setModel(model);
    }
    
      
    public void afficherDetailBonM(JTable jt,int idBon) throws SQLException{
-       ResultSet rs=getResultSet("select detailbon.qte*detailbon.pu as Montantttc,detailbon.idarticle,libarticle,detailbon.qte,detailbon.pu,detailbon.idmagasin,tva from detailbon,article where detailbon.idarticle=article.idarticle and idbon="+idBon);
+       ResultSet rs=getResultSet("select  detailbon.idarticle,libarticle,detailbon.qte,detailbon.idmagasin from detailbon,article where detailbon.idarticle=article.idarticle and idbon="+idBon);
        DefaultTableModel model=(DefaultTableModel) jt.getModel();
        model.setRowCount(0);
        while(rs.next()){
@@ -39,7 +39,7 @@ public class DETAILBON extends BON{
    
      
      public void saveJournal(JTable jt,String date,String numBon) throws SQLException{
-       String champ="livrejournal(dateoperation,idarticle,idbonentree,qteentree,puentree,pustock)";
+       String champ="livrejournal(dateoperation,idarticle,idbonentree,qteentree)";
        int nrow=jt.getRowCount();
        int i=0; 
        String valeur[]= new String[6];
@@ -49,7 +49,6 @@ public class DETAILBON extends BON{
           valeur[1]=jt.getValueAt(i,getColumnByName(jt,"code article")).toString();
           valeur[2]=numBon;
           valeur[3]=jt.getValueAt(i,getColumnByName(jt,"qte")).toString();
-          valeur[4]=jt.getValueAt(i,getColumnByName(jt,"pu")).toString();
           hma=a.getArticleInfo(Integer.parseInt(valeur[1]));
          // valeur[5]=String.valueOf(Integer.parseInt(hma.get("STOCKACTU").toString())+Integer.parseInt(valeur[3].toString()));
           //valeur[5]=hma.get("PRIXUNITAIRE").toString();// A REVOIR 

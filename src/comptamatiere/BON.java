@@ -60,9 +60,9 @@ public class BON extends BUDGET{
         return result;
     }
      
-     public void printReportBon(String idBon,String idbudget,String idfournisseur) throws Exception{       
+     public void printReportBon(String idBon,String idfournisseur) throws Exception{       
         String req="select * from bon,detailbon,article,categorie where bon.idbon=detailbon.idbon and detailbon.idarticle=article.idarticle and categorie.idcategorie= article.idcategorie and bon.idbon="+idBon;
-        r.editionReport("Bonentree",req,r.getBonHashMap(idBon,idbudget,idfournisseur));                                   
+        r.editionReport("Bonentree",req,r.getBonHashMap(idBon,idfournisseur));                                   
      }
      
      public boolean bonExist(String numbon) throws SQLException{

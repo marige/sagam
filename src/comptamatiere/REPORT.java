@@ -83,7 +83,7 @@ public class REPORT extends ModelDb {
             return hm;
     }
     
-     public HashMap getBonHashMap(String idBon,String idBudget,String idFournisseur) throws SQLException{
+     public HashMap getBonHashMap(String idBon,String idFournisseur) throws SQLException{
          HashMap hm= new HashMap();
                         ResultSet rs=getResultSet("select * from institution");
                         rs.next();
@@ -101,15 +101,7 @@ public class REPORT extends ModelDb {
                         }
                         }
                          rs.close();
-                        //budget
-                        rs=getResultSet("select * from budget where idbudget="+idBudget);
-                        if(rs.next()){
-                        nbcolumn=rs.getMetaData().getColumnCount();
-                        for(int i=1;i<=nbcolumn;i++){
-                            hm.put(rs.getMetaData().getColumnName(i).toLowerCase(), rs.getString(i));
-                        }
-                        }
-                        rs.close();
+                       
                           //fournisseur
                         rs=getResultSet("select raisonsocial from fournisseur where idfournisseur="+idFournisseur);
                         if(rs.next())
