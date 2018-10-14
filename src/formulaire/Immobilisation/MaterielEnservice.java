@@ -770,11 +770,6 @@ IMMOBILISATIONMATERIELS s= new IMMOBILISATIONMATERIELS();
                tableMaterielService.getColumn("idIMMOBILISATIONMATERIEL").setPreferredWidth(0);
                tableMaterielService.getColumn("idIMMOBILISATIONMATERIEL").setMaxWidth(0);
                
-               
-                tableMaterielService.getColumn("budget").setMinWidth(0);
-               tableMaterielService.getColumn("budget").setPreferredWidth(0);
-               tableMaterielService.getColumn("budget").setMaxWidth(0);
-               
                 tableMaterielService.getColumn("dureevie").setMinWidth(0);
                tableMaterielService.getColumn("dureevie").setPreferredWidth(0);
                tableMaterielService.getColumn("dureevie").setMaxWidth(0);

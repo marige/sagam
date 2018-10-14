@@ -501,7 +501,7 @@ public class Modification extends javax.swing.JDialog {
                 try {
                     String valeur[]={idarticle.getText(),txtCodeImmo.getText(),imo.getDateChoisie(txtDatEnservice),
                    idEtat.getText(),codeBureau.getText(),utilisateur.getText(),imo.getDateChoisie(txtDateAquis),txtObservation.getText()};
-                    String champ[]={"IDARTICLE","CODEMATERIEL","DMS","PUACQ","ETAT","budget","IDBUREAU","IDUTILISATEUR","datacq","observation"};
+                    String champ[]={"IDARTICLE","CODEMATERIEL","DMS","ETAT","IDBUREAU","IDUTILISATEUR","datacq","observation"};
                      int j=imo.updateTable("immobilisationmateriel", champ, valeur,"where idimmobilisationmateriel="+idimmobilisation);
                     JOptionPane.showMessageDialog(this, j+" Immobilisation modifiée");
                     if(j==1){
