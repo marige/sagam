@@ -324,7 +324,7 @@ public class ValidationSorti extends javax.swing.JDialog {
                         String qte=TableDetail2.getValueAt(k,s.getColumnByName(TableDetail2, "qte")).toString();
                         String type=TableDetail2.getValueAt(k,s.getColumnByName(TableDetail2, "type")).toString();
                         String code=TableDetail2.getValueAt(k,s.getColumnByName(TableDetail2, "code")).toString();
-                        d.miseJourDesStock(code,qte,type);
+                        d.miseJourDesStock(code,qte);
                         g++;
                     }
                     s.insUpdateDel("update sortie set valide=1 where idsortie="+Numero.getText());
