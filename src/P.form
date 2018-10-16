@@ -185,24 +185,25 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jButton14" min="-2" pref="196" max="-2" attributes="0"/>
-                                      <Component id="jButton6" min="-2" pref="204" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jButton19" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
-                                      <Component id="jButton15" alignment="0" min="-2" pref="204" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jButton17" alignment="0" min="-2" pref="187" max="-2" attributes="0"/>
-                                      <Component id="jButton22" alignment="0" min="-2" pref="199" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="22" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jButton23" pref="199" max="32767" attributes="0"/>
+                                      <Component id="jButton6" max="32767" attributes="0"/>
+                                      <Component id="jButton14" pref="154" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jButton19" max="32767" attributes="0"/>
+                                      <Component id="jButton15" pref="160" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jButton17" pref="163" max="32767" attributes="0"/>
+                                      <Component id="jButton22" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="jButton25" max="32767" attributes="0"/>
+                                      <Component id="jButton23" pref="159" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -234,10 +235,10 @@
                           <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton6" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                              <Component id="jButton19" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
-                              <Component id="jButton17" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
-                              <Component id="jButton25" alignment="3" min="-2" pref="41" max="-2" attributes="0"/>
+                              <Component id="jButton6" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="jButton19" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="jButton17" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="jButton25" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -246,7 +247,7 @@
                               <Component id="jButton22" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton23" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="107" max="32767" attributes="0"/>
+                          <EmptySpace pref="102" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -261,7 +262,7 @@
                       <Font name="Bitstream Vera Sans Mono" size="10" style="1"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/images/article.png"/>
+                      <Image iconType="3" name="/images/logo/octicons_f0c4(3)_48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Articles"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -293,7 +294,7 @@
                       <Font name="Bitstream Vera Sans Mono" size="10" style="1"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/images/office.png"/>
+                      <Image iconType="3" name="/images/logo/icomoon_e657(1)_48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Service/Bureau"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -316,7 +317,7 @@
                       <Font name="Bitstream Vera Sans Mono" size="10" style="1"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/images/provider.png"/>
+                      <Image iconType="3" name="/images/logo/Material Icons_e854(9)_48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Fournisseurs"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -434,7 +435,7 @@
                       <Font name="Bitstream Vera Sans Mono" size="10" style="1"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/images/invetory.png"/>
+                      <Image iconType="3" name="/images/logo/Entypo_d83d(12)_48.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Inventaire"/>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
