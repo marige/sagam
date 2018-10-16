@@ -169,7 +169,6 @@
                 <LineBorder roundedCorners="true"/>
               </Border>
               <Font PropertyName="font" name="Wide Latin" size="10" style="1"/>
-              <Color PropertyName="color" blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
             </TitledBorder>
           </Border>
         </Property>
@@ -281,7 +280,7 @@
     <Container class="javax.swing.JPanel" name="jPanel5">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="0" red="0" type="rgb"/>
+          <Color blue="33" green="33" red="0" type="rgb"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -298,15 +297,15 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Component id="jButton6" min="-2" pref="62" max="-2" attributes="0"/>
-                  <EmptySpace pref="64" max="32767" attributes="0"/>
+                  <EmptySpace pref="79" max="32767" attributes="0"/>
                   <Component id="btnModifier1" min="-2" pref="58" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                   <Component id="jButton7" min="-2" pref="60" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton8" min="-2" pref="78" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   <Component id="btncorrection" min="-2" pref="165" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
               </Group>
@@ -315,25 +314,29 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace pref="19" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jButton6" alignment="1" min="-2" pref="59" max="-2" attributes="0"/>
                       <Component id="btnModifier1" alignment="1" min="-2" pref="59" max="-2" attributes="0"/>
-                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                      <Component id="jButton7" alignment="1" min="-2" pref="59" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel1" min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="jButton7" min="-2" pref="59" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton8" min="-2" pref="56" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="btncorrection" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jButton8" min="-2" pref="56" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -351,7 +354,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/ajouter.png"/>
+              <Image iconType="3" name="/images/new.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Nouveau"/>
           </Properties>
@@ -371,7 +374,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/modificat.png"/>
+              <Image iconType="3" name="/images/edit.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Modifier"/>
           </Properties>
@@ -391,7 +394,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/supp.png"/>
+              <Image iconType="3" name="/images/delete.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Supprimer"/>
           </Properties>
@@ -411,7 +414,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/imp.png"/>
+              <Image iconType="3" name="/images/print.png"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value="Imprimer"/>
           </Properties>
@@ -427,7 +430,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="FICHE DE STOCK -----&gt;&gt;"/>
+            <Property name="text" type="java.lang.String" value="FICHE DE STOCK --&gt;&gt;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btncorrection">
