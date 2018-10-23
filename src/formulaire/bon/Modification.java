@@ -146,7 +146,7 @@ public class Modification extends javax.swing.JDialog {
         tabControl.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "", 2, 1, new java.awt.Font("Tempus Sans ITC", 1, 14), new java.awt.Color(153, 0, 0)), "Identité", 1, 2, new java.awt.Font("Tempus Sans ITC", 1, 14), new java.awt.Color(153, 51, 0))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_TOP, new java.awt.Font("Tempus Sans ITC", 1, 14), new java.awt.Color(153, 0, 0)), "Identité", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tempus Sans ITC", 1, 14), new java.awt.Color(153, 51, 0))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         jLabel1.setText("A titre");
@@ -175,7 +175,7 @@ public class Modification extends javax.swing.JDialog {
         jLabel7.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
         jLabel7.setText("Motif");
 
-        jLabel8.setFont(new java.awt.Font("Tempus Sans ITC", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Bitstream Vera Sans Mono", 1, 14)); // NOI18N
         jLabel8.setText("Type bon");
 
         jLabel9.setText("Date");
@@ -360,12 +360,12 @@ public class Modification extends javax.swing.JDialog {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 913, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 913, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 512, Short.MAX_VALUE)
         );
 
         tabControl.addTab("Informations du bon", jPanel2);
@@ -429,7 +429,7 @@ public class Modification extends javax.swing.JDialog {
         });
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Articles", 1, 2, new java.awt.Font("Vivaldi", 1, 14), new java.awt.Color(153, 0, 0))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Articles", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Vivaldi", 1, 14), new java.awt.Color(153, 0, 0))); // NOI18N
 
         jLabel15.setText("Critere:");
 
@@ -981,7 +981,7 @@ public class Modification extends javax.swing.JDialog {
         jPanel13.setBackground(new java.awt.Color(0, 0, 51));
         jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel14.setFont(new java.awt.Font("Wide Latin", 1, 10)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Garamond", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Modification Bon");
 
@@ -1002,7 +1002,7 @@ public class Modification extends javax.swing.JDialog {
             .addGroup(jPanel13Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel14.setBackground(new java.awt.Color(0, 0, 51));
@@ -1041,8 +1041,8 @@ public class Modification extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-956)/2, (screenSize.height-673)/2, 956, 673);
+        setSize(new java.awt.Dimension(956, 673));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void codeBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codeBActionPerformed

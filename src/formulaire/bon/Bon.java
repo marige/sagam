@@ -81,7 +81,7 @@ public class Bon extends javax.swing.JDialog {
         });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "RECHERCHE", 1, 2, new java.awt.Font("Wide Latin", 1, 10), java.awt.Color.black)); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "RECHERCHE", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Wide Latin", 1, 10))); // NOI18N
 
         lblRechercher.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblRechercher.setText("Article");
@@ -246,7 +246,7 @@ public class Bon extends javax.swing.JDialog {
                 "Titre 1"
             }
         ));
-        table.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        table.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         table.setName("table"); // NOI18N
         table.setSelectionForeground(new java.awt.Color(204, 0, 0));
         table.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -327,8 +327,8 @@ public class Bon extends javax.swing.JDialog {
 
         getAccessibleContext().setAccessibleParent(this);
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-808)/2, (screenSize.height-532)/2, 808, 532);
+        setSize(new java.awt.Dimension(808, 532));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown

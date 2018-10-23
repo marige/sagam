@@ -359,7 +359,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel8">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Tempus Sans ITC" size="14" style="1"/>
+                      <Font name="Bitstream Vera Sans Mono" size="14" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Type bon"/>
                   </Properties>
@@ -1520,7 +1520,7 @@
         <Component class="javax.swing.JLabel" name="jLabel14">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Wide Latin" size="10" style="1"/>
+              <Font name="Garamond" size="24" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
