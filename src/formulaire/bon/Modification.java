@@ -374,6 +374,7 @@ public class Modification extends javax.swing.JDialog {
         jPanel6.setAutoscrolls(true);
 
         jButton8.setBackground(new java.awt.Color(102, 153, 0));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/next.png"))); // NOI18N
         jButton8.setText("Etape suivante");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -381,6 +382,7 @@ public class Modification extends javax.swing.JDialog {
             }
         });
 
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/preview.png"))); // NOI18N
         jButton7.setText("Précédent");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -414,6 +416,7 @@ public class Modification extends javax.swing.JDialog {
         tableDetail.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
         jScrollPane2.setViewportView(tableDetail);
 
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/retirer.png"))); // NOI18N
         jButton10.setText("Retirer");
         jButton10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -421,6 +424,7 @@ public class Modification extends javax.swing.JDialog {
             }
         });
 
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ajout.png"))); // NOI18N
         jButton11.setText("Ajouter");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
