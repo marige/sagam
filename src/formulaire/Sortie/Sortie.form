@@ -132,7 +132,6 @@
                 <LineBorder roundedCorners="true"/>
               </Border>
               <Font PropertyName="font" name="Wide Latin" size="10" style="1"/>
-              <Color PropertyName="color" blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
             </TitledBorder>
           </Border>
         </Property>
@@ -275,13 +274,13 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="btnModifier1" alignment="0" pref="0" max="32767" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                              <Component id="jButton7" alignment="1" min="-2" pref="43" max="-2" attributes="0"/>
-                              <Component id="jButton8" min="-2" pref="47" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="btnModifier1" alignment="0" pref="47" max="32767" attributes="0"/>
+                              <Component id="jButton6" pref="0" max="32767" attributes="0"/>
+                              <Component id="jButton7" alignment="1" pref="0" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="jButton6" pref="0" max="32767" attributes="0"/>
+                          <Component id="jButton8" alignment="0" min="-2" pref="47" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>

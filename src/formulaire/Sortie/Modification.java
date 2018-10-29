@@ -121,7 +121,7 @@ public class Modification extends  javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "DEMANDE", 0, 0, new java.awt.Font("Mangal", 1, 14), new java.awt.Color(204, 0, 0))); // NOI18N
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "DEMANDE", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Mangal", 1, 14), new java.awt.Color(204, 0, 0))); // NOI18N
 
         cmbBudget.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -345,7 +345,7 @@ public class Modification extends  javax.swing.JDialog {
         });
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Articles", 0, 0, null, new java.awt.Color(0, 0, 0)));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Articles"));
 
         tableArticle.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -434,7 +434,7 @@ public class Modification extends  javax.swing.JDialog {
         });
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Detail Sortie", 2, 1));
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Detail Sortie", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.ABOVE_TOP));
 
         TableDetail.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -671,7 +671,7 @@ public class Modification extends  javax.swing.JDialog {
             .addGroup(demLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 883, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         demLayout.setVerticalGroup(
             demLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -696,10 +696,10 @@ public class Modification extends  javax.swing.JDialog {
 
         DEMANDE.addTab("Demande", dem);
 
-        jPanel10.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel10.setBackground(new java.awt.Color(0, 51, 51));
         jPanel10.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 1, 1, 2, new java.awt.Color(255, 255, 255)));
 
-        jLabel24.setFont(new java.awt.Font("Wide Latin", 1, 14)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("Garamond", 1, 24)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("Modification sortie");
 
@@ -726,7 +726,7 @@ public class Modification extends  javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DEMANDE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 897, Short.MAX_VALUE)
+                    .addComponent(DEMANDE, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 897, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -737,11 +737,11 @@ public class Modification extends  javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(DEMANDE, javax.swing.GroupLayout.DEFAULT_SIZE, 648, Short.MAX_VALUE))
+                .addComponent(DEMANDE, javax.swing.GroupLayout.PREFERRED_SIZE, 648, Short.MAX_VALUE))
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-933)/2, (screenSize.height-725)/2, 933, 725);
+        setSize(new java.awt.Dimension(933, 725));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed

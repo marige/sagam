@@ -90,6 +90,8 @@ public class Validation extends javax.swing.JDialog {
         });
         jScrollPane2.setViewportView(tableArticle);
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/valida.png"))); // NOI18N
         jButton1.setText("Validation");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +145,7 @@ public class Validation extends javax.swing.JDialog {
                 .addGap(43, 43, 43))
         );
 
-        jPanel13.setBackground(new java.awt.Color(79, 193, 233));
+        jPanel13.setBackground(new java.awt.Color(0, 51, 51));
         jPanel13.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 1, 1, 2, new java.awt.Color(255, 255, 255)));
 
         jButton13.setBackground(new java.awt.Color(255, 255, 255));
@@ -153,7 +155,7 @@ public class Validation extends javax.swing.JDialog {
             }
         });
 
-        jLabel27.setFont(new java.awt.Font("Wide Latin", 1, 14)); // NOI18N
+        jLabel27.setFont(new java.awt.Font("Garamond", 1, 24)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setText("Saisie Inventaire");
 
@@ -173,7 +175,7 @@ public class Validation extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
+                    .addComponent(jLabel27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -205,11 +207,11 @@ public class Validation extends javax.swing.JDialog {
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-1049)/2, (screenSize.height-629)/2, 1049, 629);
+        setSize(new java.awt.Dimension(1049, 629));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tableArticleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableArticleMouseClicked

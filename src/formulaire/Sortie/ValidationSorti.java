@@ -218,7 +218,7 @@ public class ValidationSorti extends javax.swing.JDialog {
         jPanel5.setBackground(new java.awt.Color(0, 51, 51));
         jPanel5.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 1, 1, 2, new java.awt.Color(255, 255, 255)));
 
-        jLabel10.setFont(new java.awt.Font("Wide Latin", 1, 10)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Garamond", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("VALIDATION DES SORTIES");
 
@@ -291,8 +291,8 @@ public class ValidationSorti extends javax.swing.JDialog {
                 .addComponent(Val, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-843)/2, (screenSize.height-603)/2, 843, 603);
+        setSize(new java.awt.Dimension(843, 603));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void TableSortieMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableSortieMouseClicked

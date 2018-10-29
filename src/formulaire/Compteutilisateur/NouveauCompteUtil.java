@@ -57,7 +57,7 @@ public class NouveauCompteUtil extends javax.swing.JDialog {
         jPanel10.setBackground(new java.awt.Color(0, 51, 51));
         jPanel10.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 1, 1, 2, new java.awt.Color(255, 255, 255)));
 
-        jLabel24.setFont(new java.awt.Font("Wide Latin", 1, 14)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("Garamond", 1, 24)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("Nouveau compte");
 
@@ -105,6 +105,7 @@ public class NouveauCompteUtil extends javax.swing.JDialog {
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("Type de compte");
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ajout.png"))); // NOI18N
         jButton2.setText("Ajouter");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,7 +171,7 @@ public class NouveauCompteUtil extends javax.swing.JDialog {
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -193,8 +194,8 @@ public class NouveauCompteUtil extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-420)/2, (screenSize.height-368)/2, 420, 368);
+        setSize(new java.awt.Dimension(420, 368));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     COMPTEUTILISATEUR c= new COMPTEUTILISATEUR();
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

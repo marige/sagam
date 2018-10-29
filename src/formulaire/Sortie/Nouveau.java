@@ -112,7 +112,7 @@ public class Nouveau extends javax.swing.JDialog {
         jPanel10.setBackground(new java.awt.Color(0, 51, 51));
         jPanel10.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 1, 1, 2, new java.awt.Color(255, 255, 255)));
 
-        jLabel24.setFont(new java.awt.Font("Wide Latin", 1, 14)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("Garamond", 1, 24)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("Fiche Enregistrement");
 
@@ -140,12 +140,12 @@ public class Nouveau extends javax.swing.JDialog {
         });
 
         tabDemande.setBackground(new java.awt.Color(255, 255, 255));
-        tabDemande.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Ordre de Sortie", 0, 0, null, new java.awt.Color(153, 153, 153)));
+        tabDemande.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(""), "Ordre de Sortie", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(153, 153, 153))); // NOI18N
         tabDemande.setMaximumSize(new java.awt.Dimension(800, 800));
         tabDemande.setPreferredSize(new java.awt.Dimension(200, 150));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Demande", 1, 2, new java.awt.Font("Vivaldi", 1, 18), new java.awt.Color(204, 0, 51))); // NOI18N
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Demande", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Vivaldi", 1, 18), new java.awt.Color(204, 0, 51))); // NOI18N
         jPanel6.setPreferredSize(new java.awt.Dimension(400, 267));
 
         DateSortie.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -288,7 +288,7 @@ public class Nouveau extends javax.swing.JDialog {
         });
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Articles", 0, 0, null, new java.awt.Color(0, 0, 0)));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Articles"));
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -509,9 +509,11 @@ public class Nouveau extends javax.swing.JDialog {
             }
         ));
         jScrollPane2.setViewportView(TableDetail);
-        TableDetail.getColumnModel().getColumn(0).setResizable(false);
-        TableDetail.getColumnModel().getColumn(0).setPreferredWidth(0);
-        TableDetail.getColumnModel().getColumn(1).setResizable(false);
+        if (TableDetail.getColumnModel().getColumnCount() > 0) {
+            TableDetail.getColumnModel().getColumn(0).setResizable(false);
+            TableDetail.getColumnModel().getColumn(0).setPreferredWidth(0);
+            TableDetail.getColumnModel().getColumn(1).setResizable(false);
+        }
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -616,18 +618,18 @@ public class Nouveau extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(tabBondesortie, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
+            .addComponent(tabBondesortie, javax.swing.GroupLayout.PREFERRED_SIZE, 767, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tabBondesortie, javax.swing.GroupLayout.DEFAULT_SIZE, 649, Short.MAX_VALUE))
+                .addComponent(tabBondesortie, javax.swing.GroupLayout.PREFERRED_SIZE, 649, Short.MAX_VALUE))
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-783)/2, (screenSize.height-542)/2, 783, 542);
+        setSize(new java.awt.Dimension(783, 542));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
