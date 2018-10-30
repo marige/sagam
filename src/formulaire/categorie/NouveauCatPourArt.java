@@ -64,10 +64,10 @@ public class NouveauCatPourArt extends javax.swing.JDialog {
         });
         getContentPane().setLayout(null);
 
-        jPanel4.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel4.setBackground(new java.awt.Color(0, 51, 51));
         jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 1, 1, 2, new java.awt.Color(255, 255, 255)));
 
-        jLabel9.setFont(new java.awt.Font("Wide Latin", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Garamond", 1, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Fiche Catégorie");
 
@@ -212,6 +212,7 @@ public class NouveauCatPourArt extends javax.swing.JDialog {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(10, 60, 570, 220);
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel_16.png"))); // NOI18N
         jButton3.setText("Annuler");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,8 +220,9 @@ public class NouveauCatPourArt extends javax.swing.JDialog {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(170, 290, 120, 40);
+        jButton3.setBounds(170, 300, 120, 30);
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save_16.png"))); // NOI18N
         jButton2.setText("Enrégistrer");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,10 +230,10 @@ public class NouveauCatPourArt extends javax.swing.JDialog {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(350, 290, 110, 40);
+        jButton2.setBounds(350, 300, 110, 30);
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-601)/2, (screenSize.height-387)/2, 601, 387);
+        setSize(new java.awt.Dimension(601, 387));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbFamilleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbFamilleActionPerformed

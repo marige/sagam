@@ -145,7 +145,7 @@ public class Nouveau extends javax.swing.JDialog {
         tabDemande.setPreferredSize(new java.awt.Dimension(200, 150));
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Demande", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Vivaldi", 1, 18), new java.awt.Color(204, 0, 51))); // NOI18N
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Demande", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Mangal", 1, 14), new java.awt.Color(204, 0, 51))); // NOI18N
         jPanel6.setPreferredSize(new java.awt.Dimension(400, 267));
 
         DateSortie.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -244,7 +244,7 @@ public class Nouveau extends javax.swing.JDialog {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DateSortie, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         jButton2.setText("Suivant->");

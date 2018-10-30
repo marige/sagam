@@ -108,6 +108,7 @@ public class essaifichestock extends javax.swing.JDialog{
         ));
         jScrollPane1.setViewportView(Tablefichestock);
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/print_16.png"))); // NOI18N
         jButton2.setText("Imprimer");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -120,7 +121,7 @@ public class essaifichestock extends javax.swing.JDialog{
         libarticle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         libarticle.setText("jLabel2");
 
-        jPanel11.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel11.setBackground(new java.awt.Color(0, 51, 51));
         jPanel11.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 1, 1, 2, new java.awt.Color(255, 255, 255)));
 
         jLabel25.setFont(new java.awt.Font("Vani", 1, 14)); // NOI18N
@@ -183,8 +184,8 @@ public class essaifichestock extends javax.swing.JDialog{
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-456)/2, (screenSize.height-199)/2, 456, 199);
+        setSize(new java.awt.Dimension(456, 199));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
  SORTIE S = new SORTIE();
     private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown

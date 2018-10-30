@@ -121,7 +121,7 @@ public class Article extends javax.swing.JDialog{
         table.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(table);
 
-        jPanel10.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel10.setBackground(new java.awt.Color(0, 51, 51));
         jPanel10.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 1, 1, 2, new java.awt.Color(255, 255, 255)));
 
         jButton10.setBackground(new java.awt.Color(255, 255, 255));
@@ -131,7 +131,7 @@ public class Article extends javax.swing.JDialog{
             }
         });
 
-        jLabel24.setFont(new java.awt.Font("Wide Latin", 1, 14)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("Garamond", 1, 24)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("Table des articles");
 
@@ -151,7 +151,7 @@ public class Article extends javax.swing.JDialog{
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE))
+                    .addComponent(jLabel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 

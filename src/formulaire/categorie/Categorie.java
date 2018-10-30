@@ -65,7 +65,7 @@ public class Categorie extends javax.swing.JDialog {
         });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Recherche", 1, 2, null, java.awt.Color.black));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Recherche", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP));
 
         lblRechercher.setText("Categorie");
 
@@ -127,7 +127,7 @@ public class Categorie extends javax.swing.JDialog {
         table.setName("table"); // NOI18N
         jScrollPane1.setViewportView(table);
 
-        jPanel4.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel4.setBackground(new java.awt.Color(0, 51, 51));
         jPanel4.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 1, 1, 2, new java.awt.Color(255, 255, 255)));
 
         jLabel9.setFont(new java.awt.Font("Wide Latin", 1, 14)); // NOI18N
@@ -146,12 +146,12 @@ public class Categorie extends javax.swing.JDialog {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(0, 1, Short.MAX_VALUE)
+                .addGap(0, 20, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jButton2.setBackground(new java.awt.Color(0, 102, 51));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ajout.png"))); // NOI18N
         jButton2.setText("Ajouter");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,7 +159,7 @@ public class Categorie extends javax.swing.JDialog {
             }
         });
 
-        btnModifier.setBackground(new java.awt.Color(0, 153, 255));
+        btnModifier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit_16.png"))); // NOI18N
         btnModifier.setText("Modifier");
         btnModifier.setPreferredSize(new java.awt.Dimension(71, 32));
         btnModifier.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +168,7 @@ public class Categorie extends javax.swing.JDialog {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(153, 0, 51));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trash_16.png"))); // NOI18N
         jButton1.setText("Supprimer");
         jButton1.setPreferredSize(new java.awt.Dimension(81, 32));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -178,6 +178,7 @@ public class Categorie extends javax.swing.JDialog {
         });
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/print_16.png"))); // NOI18N
         jButton4.setText("Imprimer");
         jButton4.setPreferredSize(new java.awt.Dimension(75, 32));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -192,8 +193,8 @@ public class Categorie extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(116, 116, 116)
+                .addComponent(jButton2)
+                .addGap(108, 108, 108)
                 .addComponent(btnModifier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(130, 130, 130)
                 .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -229,8 +230,8 @@ public class Categorie extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-758)/2, (screenSize.height-513)/2, 758, 513);
+        setSize(new java.awt.Dimension(758, 513));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
