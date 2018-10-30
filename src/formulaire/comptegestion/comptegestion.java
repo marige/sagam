@@ -42,6 +42,7 @@ public class comptegestion extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Printer7.png"))); // NOI18N
         jButton1.setText("Imprimer");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,7 +50,7 @@ public class comptegestion extends javax.swing.JDialog {
             }
         });
 
-        jPanel11.setBackground(new java.awt.Color(0, 153, 255));
+        jPanel11.setBackground(new java.awt.Color(0, 51, 51));
         jPanel11.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 1, 1, 2, new java.awt.Color(255, 255, 255)));
 
         jLabel25.setFont(new java.awt.Font("Vani", 1, 14)); // NOI18N
@@ -89,8 +90,8 @@ public class comptegestion extends javax.swing.JDialog {
                 .addGap(24, 24, 24))
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-332)/2, (screenSize.height-155)/2, 332, 155);
+        setSize(new java.awt.Dimension(332, 155));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

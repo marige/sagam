@@ -67,6 +67,7 @@ public class CompteD extends javax.swing.JDialog {
         table.setName("table"); // NOI18N
         jScrollPane1.setViewportView(table);
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ajout.png"))); // NOI18N
         jButton2.setText("Ajouter");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +75,7 @@ public class CompteD extends javax.swing.JDialog {
             }
         });
 
+        btnModifier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit_16.png"))); // NOI18N
         btnModifier.setText("Modifier");
         btnModifier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +84,7 @@ public class CompteD extends javax.swing.JDialog {
         });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Recherche", 1, 2, null, java.awt.Color.black));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Recherche", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP));
 
         jLabel1.setText("Compte Divisionnaire");
 
@@ -107,11 +109,13 @@ public class CompteD extends javax.swing.JDialog {
                 .addGap(319, 319, 319))
         );
 
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/print_16.png"))); // NOI18N
         jButton4.setText("Imprimer");
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trash_16.png"))); // NOI18N
         jButton1.setText("Supprimer");
 
-        jPanel12.setBackground(new java.awt.Color(79, 193, 233));
+        jPanel12.setBackground(new java.awt.Color(0, 51, 51));
         jPanel12.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 1, 1, 2, new java.awt.Color(255, 255, 255)));
 
         jButton12.setBackground(new java.awt.Color(255, 255, 255));
@@ -121,7 +125,7 @@ public class CompteD extends javax.swing.JDialog {
             }
         });
 
-        jLabel26.setFont(new java.awt.Font("Wide Latin", 1, 14)); // NOI18N
+        jLabel26.setFont(new java.awt.Font("Garamond", 1, 24)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("Table Compte Divisionnaire");
 
@@ -131,7 +135,7 @@ public class CompteD extends javax.swing.JDialog {
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton12)
                 .addContainerGap())
@@ -157,10 +161,10 @@ public class CompteD extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68)
-                        .addComponent(btnModifier, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(111, 111, 111)
+                        .addComponent(jButton2)
+                        .addGap(60, 60, 60)
+                        .addComponent(btnModifier)
+                        .addGap(101, 101, 101)
                         .addComponent(jButton1)
                         .addGap(106, 106, 106)
                         .addComponent(jButton4))
@@ -181,11 +185,11 @@ public class CompteD extends javax.swing.JDialog {
                     .addComponent(jButton4))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-693)/2, (screenSize.height-509)/2, 693, 509);
+        setSize(new java.awt.Dimension(693, 509));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     COMPTED cd= new COMPTED();
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

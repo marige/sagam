@@ -55,12 +55,19 @@ public class CompteP extends javax.swing.JDialog {
             }
         });
 
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/print_16.png"))); // NOI18N
         jButton4.setText("Imprimer");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trash_16.png"))); // NOI18N
         jButton1.setText("Supprimer");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Recherche", 1, 2, null, java.awt.Color.black));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Recherche", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP));
 
         jLabel1.setText("Compte principal");
 
@@ -85,6 +92,7 @@ public class CompteP extends javax.swing.JDialog {
                 .addGap(319, 319, 319))
         );
 
+        btnModifier.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit_16.png"))); // NOI18N
         btnModifier.setText("Modifier");
         btnModifier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,6 +100,7 @@ public class CompteP extends javax.swing.JDialog {
             }
         });
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ajout.png"))); // NOI18N
         jButton2.setText("Ajouter");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,7 +123,7 @@ public class CompteP extends javax.swing.JDialog {
         table.setName("table"); // NOI18N
         jScrollPane1.setViewportView(table);
 
-        jPanel12.setBackground(new java.awt.Color(79, 193, 233));
+        jPanel12.setBackground(new java.awt.Color(0, 51, 51));
         jPanel12.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 1, 1, 2, new java.awt.Color(255, 255, 255)));
 
         jButton12.setBackground(new java.awt.Color(255, 255, 255));
@@ -124,7 +133,7 @@ public class CompteP extends javax.swing.JDialog {
             }
         });
 
-        jLabel26.setFont(new java.awt.Font("Wide Latin", 1, 14)); // NOI18N
+        jLabel26.setFont(new java.awt.Font("Garamond", 1, 24)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("TABLE DES COMPTE PRINCIPAL");
 
@@ -134,7 +143,7 @@ public class CompteP extends javax.swing.JDialog {
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton12)
                 .addContainerGap())
@@ -163,14 +172,14 @@ public class CompteP extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(91, 91, 91)
-                                .addComponent(btnModifier, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(94, 94, 94)
+                                .addComponent(jButton2)
+                                .addGap(83, 83, 83)
+                                .addComponent(btnModifier)
+                                .addGap(84, 84, 84)
                                 .addComponent(jButton1)
-                                .addGap(82, 82, 82)
+                                .addGap(90, 90, 90)
                                 .addComponent(jButton4)
-                                .addGap(0, 235, Short.MAX_VALUE)))))
+                                .addGap(0, 187, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -185,13 +194,13 @@ public class CompteP extends javax.swing.JDialog {
                     .addComponent(btnModifier)
                     .addComponent(jButton1)
                     .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-856)/2, (screenSize.height-516)/2, 856, 516);
+        setSize(new java.awt.Dimension(856, 516));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
      COMPTEP cp=new COMPTEP();
     private void btnModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierActionPerformed
@@ -231,6 +240,10 @@ public class CompteP extends javax.swing.JDialog {
        table.getColumn("DATESTOCKINI").setPreferredWidth(0);
        table.getColumn("DATESTOCKINI").setMaxWidth(0);*/
     }//GEN-LAST:event_formWindowGainedFocus
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

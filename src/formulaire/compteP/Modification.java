@@ -47,6 +47,7 @@ public class Modification extends javax.swing.JDialog{
             }
         });
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/valide_16.png"))); // NOI18N
         jButton2.setText("Appliquer");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,6 +55,7 @@ public class Modification extends javax.swing.JDialog{
             }
         });
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancel_16.png"))); // NOI18N
         jButton3.setText("Annuler");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +75,7 @@ public class Modification extends javax.swing.JDialog{
         txtCodeP.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txtCodeP.setForeground(new java.awt.Color(255, 0, 51));
 
-        jPanel12.setBackground(new java.awt.Color(79, 193, 233));
+        jPanel12.setBackground(new java.awt.Color(0, 51, 51));
         jPanel12.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 1, 1, 2, new java.awt.Color(255, 255, 255)));
 
         jButton12.setBackground(new java.awt.Color(255, 255, 255));
@@ -83,7 +85,7 @@ public class Modification extends javax.swing.JDialog{
             }
         });
 
-        jLabel26.setFont(new java.awt.Font("Wide Latin", 1, 14)); // NOI18N
+        jLabel26.setFont(new java.awt.Font("Garamond", 1, 24)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(255, 255, 255));
         jLabel26.setText("Modification Compte Principal");
 
@@ -150,11 +152,11 @@ public class Modification extends javax.swing.JDialog{
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(jButton2))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-642)/2, (screenSize.height-230)/2, 642, 230);
+        setSize(new java.awt.Dimension(642, 230));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 COMPTEP cp = new COMPTEP();
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

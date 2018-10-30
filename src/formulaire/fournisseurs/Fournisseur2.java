@@ -68,7 +68,7 @@ public class Fournisseur2 extends javax.swing.JDialog {
         });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "RECHERCHE", 1, 2, new java.awt.Font("Wide Latin", 1, 10), java.awt.Color.black)); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "RECHERCHE", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Wide Latin", 1, 10))); // NOI18N
 
         lblRechercher1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblRechercher1.setText("FOURNISSEUR");
@@ -141,7 +141,7 @@ public class Fournisseur2 extends javax.swing.JDialog {
             }
         });
 
-        jLabel24.setFont(new java.awt.Font("Wide Latin", 1, 14)); // NOI18N
+        jLabel24.setFont(new java.awt.Font("Garamond", 1, 24)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 255, 255));
         jLabel24.setText("Table des Fournisseurs");
 
@@ -257,10 +257,12 @@ public class Fournisseur2 extends javax.swing.JDialog {
         });
         TableFournisseur.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         jScrollPane2.setViewportView(TableFournisseur);
-        TableFournisseur.getColumnModel().getColumn(0).setResizable(false);
-        TableFournisseur.getColumnModel().getColumn(0).setPreferredWidth(0);
-        TableFournisseur.getColumnModel().getColumn(1).setResizable(false);
-        TableFournisseur.getColumnModel().getColumn(1).setPreferredWidth(0);
+        if (TableFournisseur.getColumnModel().getColumnCount() > 0) {
+            TableFournisseur.getColumnModel().getColumn(0).setResizable(false);
+            TableFournisseur.getColumnModel().getColumn(0).setPreferredWidth(0);
+            TableFournisseur.getColumnModel().getColumn(1).setResizable(false);
+            TableFournisseur.getColumnModel().getColumn(1).setPreferredWidth(0);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -295,8 +297,8 @@ public class Fournisseur2 extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-701)/2, (screenSize.height-435)/2, 701, 435);
+        setSize(new java.awt.Dimension(701, 435));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 FOURNISSEUR Fournisseur = new FOURNISSEUR();     
 private void chargement(){
